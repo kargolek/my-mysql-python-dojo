@@ -15,7 +15,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: user
     healthcheck:
-      test: "/usr/bin/mysql --user=user --password=user --execute \"SHOW DATABASES;\""
+      test: "/usr/bin/mysql --user=user --password=root --execute \"SHOW DATABASES;\""
       interval: 2s
       timeout: 10s
       retries: 10
@@ -25,3 +25,6 @@ services:
     restart: always
     ports:
       - 8080:8080
+    depends_on:
+      mysql:
+        condition: service_healthy
