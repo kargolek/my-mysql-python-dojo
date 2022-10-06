@@ -21,9 +21,9 @@ jobs:
         with:
           time: '60s'
 
-      - name: Run mysql
+      - name: Ping mysql
         run: |
-          mysql -h 127.0.0.1 -u user -p user
+          mysqladmin ping
 
       - name: Install dependencies
         run: |
