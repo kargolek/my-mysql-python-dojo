@@ -4,6 +4,8 @@ from util.connector_util import ConnectorUtil
 
 connector_util = ConnectorUtil
 
+#Example queries
+
 if __name__ == '__main__':
     connection = mysql.connector.connect(host='localhost',
                                          port=3306,
