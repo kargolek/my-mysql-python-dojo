@@ -1,4 +1,4 @@
-version: '4.12'
+version: '3.8'
 
 services:
   mysql:
@@ -14,9 +14,17 @@ services:
       MYSQL_DATABASE: Northwind
       MYSQL_USER: user
       MYSQL_PASSWORD: user
+    healthcheck:
+      test: "/usr/bin/mysql --user=user --password=user --execute \"SHOW DATABASES;\""
+      interval: 5s
+      timeout: 60s
+      retries: 10
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
+    depends_on:
+      mysql:
+        condition: service_healthy

@@ -7,7 +7,7 @@ connector_util = ConnectorUtil
 # Example queries
 
 if __name__ == '__main__':
-    connection = mysql.connector.connect(host='localhost',
+    connection = mysql.connector.connect(host='127.0.0.1',
                                          port=3306,
                                          database='Northwind',
                                          user='user',
