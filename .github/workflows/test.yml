@@ -21,6 +21,10 @@ jobs:
         with:
           time: '60s'
 
+      - name: Run mysql
+        run: |
+          mysql -h 127.0.0.1 -u root -p
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
