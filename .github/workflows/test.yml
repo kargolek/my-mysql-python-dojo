@@ -16,6 +16,11 @@ jobs:
         run: |
           docker-compose up -d --build
 
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
