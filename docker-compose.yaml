@@ -14,6 +14,11 @@ services:
       MYSQL_DATABASE: Northwind
       MYSQL_USER: user
       MYSQL_PASSWORD: user
+    healthcheck:
+      test: "/usr/bin/mysql --user=user --password=user --execute \"SHOW DATABASES;\""
+      interval: 2s
+      timeout: 10s
+      retries: 10
 
   adminer:
     image: adminer

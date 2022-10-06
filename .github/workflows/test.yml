@@ -21,10 +21,6 @@ jobs:
         with:
           time: '60s'
 
-      - name: Ping mysql
-        run: |
-          mysqladmin ping
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
