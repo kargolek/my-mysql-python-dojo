@@ -1,0 +1,22 @@
+version: '4.12'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql_test
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Northwind
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
