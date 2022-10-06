@@ -16,9 +16,9 @@ services:
       MYSQL_PASSWORD: user
     healthcheck:
       test: "/usr/bin/mysql --user=user --password=user --execute \"SHOW DATABASES;\""
-      interval: 45s
-      timeout: 10s
-      retries: 2
+      interval: 5s
+      timeout: 60s
+      retries: 10
 
   adminer:
     image: adminer
