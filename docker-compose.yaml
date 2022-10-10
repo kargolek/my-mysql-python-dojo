@@ -15,7 +15,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     healthcheck:
-      test: "/usr/bin/mysql --user=$MYSQL_USER --password=$MYSQL_PASSWORD --execute \"SHOW DATABASES;\""
+      test: "echo '$MYSQL_USER'"
       interval: 5s
       timeout: 60s
       retries: 10
