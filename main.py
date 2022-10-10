@@ -1,6 +1,7 @@
 import mysql.connector
 
 from util.connector_util import ConnectorUtil
+from util.secrets import Secrets
 
 connector_util = ConnectorUtil
 
@@ -10,8 +11,8 @@ if __name__ == '__main__':
     connection = mysql.connector.connect(host='127.0.0.1',
                                          port=3306,
                                          database='Northwind',
-                                         user='user',
-                                         password='user')
+                                         user=Secrets.MYSQL_USER,
+                                         password=Secrets.MYSQL_PASSWORD)
     cursor = connection.cursor()
     cursor.execute('SELECT * FROM Category;')
     connector_util.print_query(cursor)
