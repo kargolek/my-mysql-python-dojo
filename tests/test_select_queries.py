@@ -43,18 +43,17 @@ class TestSelectQueries:
                            datetime.datetime(2007, 6, 13, 0, 0), 3, Decimal('1007.64'), 'Ship to 63-C',
                            'Taucherstraße 3456', 'Cunewalde', None, '10281', 'Germany')
 
-    def test_should_select_order_detail_sorted_by_unit_price_desc(self, cursor):
+    def test_should_select_order_detail_sorted_by_unit_price_desc_order_id_asc(self, cursor):
         data = ConnectorUtil.fetch_data_print(cursor, 'SELECT * FROM OrderDetail '
-                                                      'ORDER BY unitPrice DESC;')
+                                                      'ORDER BY unitPrice DESC, orderId ASC '
+                                                      'LIMIT 10;')
 
         assert data[0] == (714, 10518, 38, Decimal('263.50'), 15, Decimal('0.00'))
-        #assert data[19] == (332, 10372, 38, Decimal('210.80'), 40, Decimal('0.25'))
 
-    def test_should_select_order_detail_sorted_by_unit_price_desc_and_quantity_desc(self, cursor):
+    def test_should_select_order_detail_sorted_by_unit_price_desc_and_quantity_desc_order_id(self, cursor):
         data = ConnectorUtil.fetch_data_print(cursor,
                                               'SELECT * FROM OrderDetail '
-                                              'ORDER BY unitPrice DESC, quantity DESC '
-                                              'LIMIT 10;')
+                                              'ORDER BY unitPrice DESC, quantity DESC, orderId DESC '
+                                              'LIMIT 20;')
 
         assert data[0] == (1894, 10981, 38, Decimal('263.50'), 60, Decimal('0.00'))
-        assert data[9] == (972, 10616, 38, Decimal('263.50'), 15, Decimal('0.05'))
