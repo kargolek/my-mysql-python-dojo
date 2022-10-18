@@ -57,3 +57,10 @@ class TestSelectQueries:
                                               'LIMIT 20;')
 
         assert data[0] == (1894, 10981, 38, Decimal('263.50'), 60, Decimal('0.00'))
+
+    def test_should_select_distinct_country_customer(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT DISTINCT Country FROM Customer;')
+
+        assert data[0][0] == 'Germany'
+        assert data[20][0] == 'Poland'
+
