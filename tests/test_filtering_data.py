@@ -4,7 +4,14 @@ from decimal import Decimal
 from util.connector_util import ConnectorUtil
 
 
-class TestSelectAndOperators:
+class TestFilteringData:
+
+    # MySQL WHERE Clause
+    def test_should_select_product_name_by_product_id(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT productName FROM Product '
+                                                      'WHERE productId = 5;')
+
+        assert data[0][0] == 'Product EPEIM'
 
     # MySQL WHERE Clause & AND operator
     def test_should_select_sales_orders_where_freight_above_800_and_shipper_id_is_3(self, cursor):
@@ -48,7 +55,7 @@ class TestSelectAndOperators:
         assert data[0][0] == 10248
         assert data[14][0] == 10850
 
-    # MySQL WHERE NOT Clause & AND NOT operator & ORDER BY Keyword
+    # MySQL DISTINCT AND WHERE NOT Clause & AND NOT operator & ORDER BY Keyword
     def test_should_select_countries_where_not_france_brazil_germany_sales_orders(self, cursor):
         data = ConnectorUtil.fetch_data_print(cursor, 'SELECT DISTINCT shipCountry '
                                                       'FROM SalesOrder '
@@ -59,3 +66,30 @@ class TestSelectAndOperators:
 
         assert data[0][0] == 'Argentina'
         assert data[17][0] == 'Venezuela'
+
+    # MySQL DISTINCTROW clause
+    def test_should_select_distinctrow_and_concat_employee_name_surname_sales_order(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT DISTINCTROW '
+                                                      'CONCAT(Employee.firstname," ",Employee.lastname) AS empName '
+                                                      'FROM SalesOrder '
+                                                      'JOIN Employee '
+                                                      'ON SalesOrder.employeeId = Employee.employeeId;')
+        assert data[0][0] == 'Sven Buck'
+        assert data[8][0] == 'Russell King'
+
+    # MySQL DISTINCT clause
+    def test_should_select_distinct_country_customer(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT DISTINCT Country FROM Customer;')
+
+        assert data[0][0] == 'Germany'
+        assert data[20][0] == 'Poland'
+
+    # MySQL DISTINCTROW clause
+    def test_should_select_distinctrow_employee_name_surname_sales_order(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT DISTINCTROW Employee.firstname, Employee.lastname '
+                                                      'FROM SalesOrder '
+                                                      'JOIN Employee '
+                                                      'ON SalesOrder.employeeId = Employee.employeeId;')
+
+        assert data[0] == ('Sven', 'Buck')
+        assert data[8] == ('Russell', 'King')
