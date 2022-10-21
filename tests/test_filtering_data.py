@@ -93,3 +93,20 @@ class TestFilteringData:
 
         assert data[0] == ('Sven', 'Buck')
         assert data[8] == ('Russell', 'King')
+
+    # MySQL IN operator
+    def test_should_select_customers_from_uk_and_ireland(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT contactName, phone, city, country FROM Customer '
+                                                      'WHERE country IN ("UK", "Ireland");')
+
+        assert data[0] == ('Arndt, Torsten', '(171) 456-7890', 'London', 'UK')
+
+    # MySQL IN operator
+    def test_should_select_supplier_with_title_sales(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT contactName, contactTitle, phone FROM Supplier '
+                                                      'WHERE contactTitle '
+                                                      'IN ("Sales Representative", "Sales Agent", "Sales Manager");')
+
+        assert data[0] == ('Parovszky, Alfons', 'Sales Representative', '(313) 555-0109')
+        assert data[2] == ('Basalik, Evan', 'Sales Agent', '031-345 67 89')
+        assert data[9] == ('Leoni, Alessandro', 'Sales Manager', '89.01.23.45')
