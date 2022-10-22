@@ -1,6 +1,7 @@
 import datetime
 from decimal import Decimal
 
+from util.assertion_util import AssertionUtil
 from util.connector_util import ConnectorUtil
 
 
@@ -110,3 +111,47 @@ class TestFilteringData:
         assert data[0] == ('Parovszky, Alfons', 'Sales Representative', '(313) 555-0109')
         assert data[2] == ('Basalik, Evan', 'Sales Agent', '031-345 67 89')
         assert data[9] == ('Leoni, Alessandro', 'Sales Manager', '89.01.23.45')
+
+    # MySQL NOT IN operator
+    def test_should_select_territory_id_and_description_where_region_id_is_not_1_3(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT territoryId, territorydescription FROM Territory '
+                                                      'WHERE regionId '
+                                                      'NOT IN (1, 3);')
+        assert data[0] == ('29202', 'Columbia')
+        assert data[22] == ('98104', 'Seattle')
+
+    # MySQL BETWEEN Operator
+    def test_should_select_products_unit_price_between_100_200(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT productId, productName, unitPrice FROM Product '
+                                                      'WHERE unitPrice '
+                                                      'BETWEEN 100 AND 200;')
+
+        assert data[0] == (29, 'Product VJXYN', Decimal('123.79'))
+
+    # MySQL NOT BETWEEN Operator
+    def test_should_select_products_unit_price_not_between_10_300(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT productId, productName, unitPrice FROM Product '
+                                                      'WHERE unitPrice '
+                                                      'NOT BETWEEN 10 AND 300;')
+
+        assert data[0] == (13, 'Product POXFU', Decimal('6.00'))
+        assert data[10] == (75, 'Product BWRLG', Decimal('7.75'))
+
+    # MySQL LIKE operator
+    def test_should_select_customer_company_starts_on_letter_a(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT custId, companyName, contactName FROM Customer '
+                                                      'WHERE companyName '
+                                                      'LIKE "Customer A%";')
+
+        assert data[0] == (25, 'Customer AZJED', 'Carlson, Jason')
+        assert data[1] == (58, 'Customer AHXHT', 'Fakhouri, Fadi')
+        assert data[2] == (72, 'Customer AHPOP', 'Welcker, Brian')
+
+    # MySQL NOT LIKE operator
+    def test_should_select_customer_company_starts_on_lette(self, cursor):
+        data = ConnectorUtil.fetch_data_print(cursor, 'SELECT custId, companyName, contactName FROM Customer '
+                                                      'WHERE companyName '
+                                                      'NOT LIKE "Customer A%";')
+
+        assert data[0] == (1, 'Customer NRZBB', 'Allen, Michael')
+        assert AssertionUtil.is_data_contains_element(data, (25, 'Customer AZJED', 'Carlson, Jason')) is False
