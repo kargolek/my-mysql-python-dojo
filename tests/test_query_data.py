@@ -1,6 +1,3 @@
-import datetime
-from decimal import Decimal
-
 from util.connector_util import fetch_data_print
 
 

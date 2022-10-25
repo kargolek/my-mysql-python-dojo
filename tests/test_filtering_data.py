@@ -1,6 +1,7 @@
 import datetime
 from decimal import Decimal
 
+from util.assertion_util import is_data_contains_element
 from util.connector_util import fetch_data_print
 
 
@@ -94,3 +95,96 @@ class TestFilteringData:
 
         assert data[0] == ('Sven', 'Buck')
         assert data[8] == ('Russell', 'King')
+
+    # MySQL IN operator
+    def test_should_select_customers_from_uk_and_ireland(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT contactName, phone, city, country FROM Customer '
+                                        'WHERE country IN ("UK", "Ireland");')
+
+        assert data[0] == ('Arndt, Torsten', '(171) 456-7890', 'London', 'UK')
+
+    # MySQL IN operator
+    def test_should_select_supplier_with_title_sales(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT contactName, contactTitle, phone FROM Supplier '
+                                        'WHERE contactTitle '
+                                        'IN ("Sales Representative", "Sales Agent", "Sales Manager");')
+
+        assert data[0] == ('Parovszky, Alfons', 'Sales Representative', '(313) 555-0109')
+        assert data[2] == ('Basalik, Evan', 'Sales Agent', '031-345 67 89')
+        assert data[9] == ('Leoni, Alessandro', 'Sales Manager', '89.01.23.45')
+
+    # MySQL NOT IN operator
+    def test_should_select_territory_id_and_description_where_region_id_is_not_1_3(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT territoryId, territorydescription FROM Territory '
+                                        'WHERE regionId '
+                                        'NOT IN (1, 3);')
+        assert data[0] == ('29202', 'Columbia')
+        assert data[22] == ('98104', 'Seattle')
+
+    # MySQL BETWEEN Operator
+    def test_should_select_products_unit_price_between_100_200(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT productId, productName, unitPrice FROM Product '
+                                        'WHERE unitPrice '
+                                        'BETWEEN 100 AND 200;')
+
+        assert data[0] == (29, 'Product VJXYN', Decimal('123.79'))
+
+    # MySQL NOT BETWEEN Operator
+    def test_should_select_products_unit_price_not_between_10_300(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT productId, productName, unitPrice FROM Product '
+                                        'WHERE unitPrice '
+                                        'NOT BETWEEN 10 AND 300;')
+
+        assert data[0] == (13, 'Product POXFU', Decimal('6.00'))
+        assert data[10] == (75, 'Product BWRLG', Decimal('7.75'))
+
+    # MySQL LIKE operator
+    def test_should_select_customer_company_starts_on_letter_a(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT custId, companyName, contactName FROM Customer '
+                                        'WHERE companyName '
+                                        'LIKE "Customer A%";')
+
+        assert data[0] == (25, 'Customer AZJED', 'Carlson, Jason')
+        assert data[1] == (58, 'Customer AHXHT', 'Fakhouri, Fadi')
+        assert data[2] == (72, 'Customer AHPOP', 'Welcker, Brian')
+
+    # MySQL NOT LIKE operator
+    def test_should_select_customer_company_not_start_on_letter_a(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT custId, companyName, contactName FROM Customer '
+                                        'WHERE companyName '
+                                        'NOT LIKE "Customer A%";')
+
+        assert data[0] == (1, 'Customer NRZBB', 'Allen, Michael')
+        assert is_data_contains_element(data, (25, 'Customer AZJED', 'Carlson, Jason')) is False
+
+    # MySQL IS NULL operator
+    def test_should_select_supplier_without_region(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT supplierId, contactName, region FROM Supplier '
+                                        'WHERE region '
+                                        'IS NULL;')
+
+        assert data[0] == (1, 'Adolphi, Stephan', None)
+        assert is_data_contains_element(data, (2, 'Hance, Jim', 'LA')) is False
+
+    # MySQL IS NOT NULL operator
+    def test_should_select_customers_where_region_is_available(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT custId, contactName, region FROM Customer '
+                                        'WHERE region '
+                                        'IS NOT NULL;')
+
+        assert data[0] == (10, 'Bassols, Pilar Colome', 'BC')
+        assert is_data_contains_element(data, (1, 'Allen, Michael', None)) is False
+
+    # MySQL LIMIT clause
+    def test_should_select_employee_id_lastname_first_name_limit_3(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT employeeId, firstname, lastname FROM Employee '
+                                        'LIMIT 3;')
+        assert data[0] == (1, 'Sara', 'Davis')
+        assert len(data) == 3
+
+    # MySQL LIMIT clause
+    def test_should_select_employee_id_lastname_first_name_limit_offset_3_rowcount_2(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT employeeId, firstname, lastname FROM Employee '
+                                        'LIMIT 3, 2;')
+        assert data[0] == (4, 'Yael', 'Peled')
+        assert len(data) == 2
