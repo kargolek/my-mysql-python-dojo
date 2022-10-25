@@ -1,7 +1,7 @@
 import datetime
 from decimal import Decimal
 
-from util.assertion_util import AssertionUtil
+from util.assertion_util import is_data_contains_element
 from util.connector_util import fetch_data_print
 
 
@@ -149,10 +149,28 @@ class TestFilteringData:
         assert data[2] == (72, 'Customer AHPOP', 'Welcker, Brian')
 
     # MySQL NOT LIKE operator
-    def test_should_select_customer_company_starts_on_lette(self, cursor):
+    def test_should_select_customer_company_not_start_on_letter_a(self, cursor):
         data = fetch_data_print(cursor, 'SELECT custId, companyName, contactName FROM Customer '
                                         'WHERE companyName '
                                         'NOT LIKE "Customer A%";')
 
         assert data[0] == (1, 'Customer NRZBB', 'Allen, Michael')
-        assert AssertionUtil.is_data_contains_element(data, (25, 'Customer AZJED', 'Carlson, Jason')) is False
+        assert is_data_contains_element(data, (25, 'Customer AZJED', 'Carlson, Jason')) is False
+
+    # MySQL IS NULL operator
+    def test_should_select_supplier_without_region(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT supplierId, contactName, region FROM Supplier '
+                                        'WHERE region '
+                                        'IS NULL;')
+
+        assert data[0] == (1, 'Adolphi, Stephan', None)
+        assert is_data_contains_element(data, (2, 'Hance, Jim', 'LA')) is False
+
+    # MySQL IS NOT NULL operator
+    def test_should_select_customers_where_region_is_available(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT custId, contactName, region FROM Customer '
+                                        'WHERE region '
+                                        'IS NOT NULL;')
+
+        assert data[0] == (10, 'Bassols, Pilar Colome', 'BC')
+        assert is_data_contains_element(data, (1, 'Allen, Michael', None)) is False
