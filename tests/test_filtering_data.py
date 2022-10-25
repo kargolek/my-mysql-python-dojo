@@ -174,3 +174,17 @@ class TestFilteringData:
 
         assert data[0] == (10, 'Bassols, Pilar Colome', 'BC')
         assert is_data_contains_element(data, (1, 'Allen, Michael', None)) is False
+
+    # MySQL LIMIT clause
+    def test_should_select_employee_id_lastname_first_name_limit_3(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT employeeId, firstname, lastname FROM Employee '
+                                        'LIMIT 3;')
+        assert data[0] == (1, 'Sara', 'Davis')
+        assert len(data) == 3
+
+    # MySQL LIMIT clause
+    def test_should_select_employee_id_lastname_first_name_limit_offset_3_rowcount_2(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT employeeId, firstname, lastname FROM Employee '
+                                        'LIMIT 3, 2;')
+        assert data[0] == (4, 'Yael', 'Peled')
+        assert len(data) == 2
