@@ -92,3 +92,17 @@ class TestAggregateData:
 
         assert data[0] == ('Product WHBYK', Decimal('1577'))
         assert data[76] == ('Product AOZBW', Decimal('95'))
+
+    # MySQL aggregate function – MIN() function
+    def test_should_select_lowest_product_price(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT MIN(unitPrice) as lowestPrice '
+                                        'FROM Product;')
+
+        assert data[0][0] == Decimal('2.5')
+
+    # MySQL aggregate function – MAX() function
+    def test_should_select_highest_product_price(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT MAX(unitPrice) as highestPrice '
+                                        'FROM Product;')
+
+        assert data[0][0] == Decimal('263.50')
