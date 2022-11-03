@@ -106,3 +106,23 @@ class TestAggregateData:
                                         'FROM Product;')
 
         assert data[0][0] == Decimal('263.50')
+
+    # MySQL aggregate function – MAX() function
+    def test_should_select_order_id_with_max_freight(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT orderId, MAX(freight) '
+                                        'FROM SalesOrder '
+                                        'GROUP BY orderId;')
+
+        assert data[0] == (10248, Decimal('32.38'))
+        assert data[829] == (11077, Decimal('8.53'))
+
+    # MySQL aggregate function – MIN() function
+    def test_should_select_order_id_with_min_freight(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT orderId, MIN(freight) '
+                                        'FROM SalesOrder '
+                                        'GROUP BY orderId;')
+
+        assert data[0] == (10248, Decimal('32.38'))
+        assert data[829] == (11077, Decimal('8.53'))
+
+
