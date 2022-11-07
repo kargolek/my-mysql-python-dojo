@@ -1,4 +1,4 @@
-from util.connector_util import fetch_data_print
+from test.util.connector_util import fetch_data_print
 
 
 class TestQueryData:

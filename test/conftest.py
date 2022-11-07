@@ -1,7 +1,7 @@
 import pytest
 from mysql import connector
 
-from util.secrets import Secrets
+from test.util.secrets import Secrets
 
 
 @pytest.fixture(scope='class')
