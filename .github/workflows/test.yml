@@ -24,16 +24,16 @@ jobs:
       - name: Setup python and cache
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.11'
           cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
-      - name: Run pytest tests
+      - name: Run pytest test
         run: |
-          python -m pytest -v
+          python -m pytest --html=report.html -v test/
 
       - name: Stop container
         if: always()
