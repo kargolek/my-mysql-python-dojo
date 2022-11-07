@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>index.html</h1>
-    <p>Report generated on 07-Nov-2022 at 17:24:58 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 07-Nov-2022 at 22:22:41 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -451,8 +451,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>39 tests ran in 0.25 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">39 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>48 tests ran in 0.29 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">48 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -467,7 +467,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_customer_countries_and_group_them</td>
-          <td class="col-duration">0.02</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -3487,6 +3487,145 @@ SQL query: SELECT employeeId, firstname, lastname FROM Employee LIMIT 3, 2;
 (&#x27;employeeId&#x27;, &#x27;firstname&#x27;, &#x27;lastname&#x27;)
 (4, &#x27;Yael&#x27;, &#x27;Peled&#x27;)
 (5, &#x27;Sven&#x27;, &#x27;Buck&#x27;)
+Size: 2
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_select_employee_lastname_buck_from_sales_order</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT lastName, firstName FROM SalesOrder JOIN Employee Employee USING (employeeId) WHERE lastName = &quot;Buck&quot; GROUP BY employeeId;
+(&#x27;lastName&#x27;, &#x27;firstName&#x27;)
+(&#x27;Buck&#x27;, &#x27;Sven&#x27;)
+Size: 1
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_orders_and_group_by_the_year</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT YEAR(orderDate) as year, COUNT(*) as orders FROM SalesOrder GROUP BY year;
+(&#x27;year&#x27;, &#x27;orders&#x27;)
+(2006, 152)
+(2007, 408)
+(2008, 270)
+Size: 3
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_orders_freight_and_group_by_the_year</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT YEAR(orderDate) as year, SUM(freight) as freight FROM SalesOrder GROUP BY year;
+(&#x27;year&#x27;, &#x27;freight&#x27;)
+(2006, Decimal(&#x27;10279.87&#x27;))
+(2007, Decimal(&#x27;32468.77&#x27;))
+(2008, Decimal(&#x27;22194.05&#x27;))
+Size: 3
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_shipped_sales_by_shipper_in_2006</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2006 GROUP BY companyName ORDER BY shipped DESC;
+(&#x27;companyName&#x27;, &#x27;shipped&#x27;)
+(&#x27;Shipper ZHISN&#x27;, 58)
+(&#x27;Shipper ETYNR&#x27;, 56)
+(&#x27;Shipper GVSUA&#x27;, 38)
+Size: 3
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_shipped_sales_by_shipper_in_2007</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2007 GROUP BY companyName ORDER BY shipped DESC;
+(&#x27;companyName&#x27;, &#x27;shipped&#x27;)
+(&#x27;Shipper ETYNR&#x27;, 153)
+(&#x27;Shipper GVSUA&#x27;, 133)
+(&#x27;Shipper ZHISN&#x27;, 122)
+Size: 3
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_shipped_sales_by_shipper_in_2008</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2008 GROUP BY companyName ORDER BY shipped DESC;
+(&#x27;companyName&#x27;, &#x27;shipped&#x27;)
+(&#x27;Shipper ETYNR&#x27;, 117)
+(&#x27;Shipper GVSUA&#x27;, 78)
+(&#x27;Shipper ZHISN&#x27;, 75)
+Size: 3
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_shipped_sales_by_shipper_all_time</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) GROUP BY companyName ORDER BY shipped DESC;
+(&#x27;companyName&#x27;, &#x27;shipped&#x27;)
+(&#x27;Shipper ETYNR&#x27;, 326)
+(&#x27;Shipper ZHISN&#x27;, 255)
+(&#x27;Shipper GVSUA&#x27;, 249)
+Size: 3
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_shipped_sales_by_shipper_all_time_more_than_255_shipped</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) GROUP BY companyName HAVING shipped &gt; 255;
+(&#x27;companyName&#x27;, &#x27;shipped&#x27;)
+(&#x27;Shipper ETYNR&#x27;, 326)
+Size: 1
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_avg_discount_per_product_name_having_more_than_10_percent_in_all_orders</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT productName, AVG(discount) as discounts FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName HAVING discounts &gt; 0.1 ORDER BY discounts DESC;
+(&#x27;productName&#x27;, &#x27;discounts&#x27;)
+(&#x27;Product MYNXN&#x27;, Decimal(&#x27;0.108333&#x27;))
+(&#x27;Product RECZE&#x27;, Decimal(&#x27;0.102273&#x27;))
 Size: 2
 <br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
