@@ -78,3 +78,25 @@ class TestGroupingData:
 
         assert data[0] == ('Shipper ETYNR', 326)
         assert data[2] == ('Shipper GVSUA', 249)
+
+    # MySQL HAVING clause
+    def test_should_count_shipped_sales_by_shipper_all_time_more_than_255_shipped(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) as shipped FROM SalesOrder '
+                                        'JOIN Shipper '
+                                        'Shipper USING (shipperId) '
+                                        'GROUP BY companyName '
+                                        'HAVING shipped > 255;')
+
+        assert data[0] == ('Shipper ETYNR', 326)
+
+    # MySQL HAVING clause
+    def test_should_count_avg_discount_per_product_name_having_more_than_10_percent_in_all_orders(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT productName, AVG(discount) as discounts FROM OrderDetail '
+                                        'JOIN Product '
+                                        'Product USING (productId) '
+                                        'GROUP BY productName '
+                                        'HAVING discounts > 0.1 '
+                                        'ORDER BY discounts DESC;')
+
+        assert data[0] == ('Product MYNXN', Decimal('0.108333'))
+        assert data[1] == ('Product RECZE', Decimal('0.102273'))
