@@ -33,7 +33,7 @@ jobs:
 
       - name: Run pytest test
         run: |
-          python -m pytest --html=report.html -v test/
+          python -m pytest --html=index.html --self-contained-html -v test/
 
       - name: Stop container
         if: always()
@@ -45,7 +45,7 @@ jobs:
         if: always()
         with:
           name: artifact-with-test-results
-          path: ${{ github.workspace }}/report.html
+          path: ${{ github.workspace }}/index.html
 
       - name: Download Artifacts
         uses: actions/download-artifact@v2
