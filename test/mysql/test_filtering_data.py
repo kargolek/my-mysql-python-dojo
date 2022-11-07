@@ -1,8 +1,8 @@
 import datetime
 from decimal import Decimal
 
-from .util.assertion_util import is_data_contains_element
-from .util.connector_util import fetch_data_print
+from test.util.assertion_util import is_data_contains_element
+from test.util.connector_util import fetch_data_print
 
 
 class TestFilteringData:
