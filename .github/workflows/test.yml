@@ -39,3 +39,10 @@ jobs:
         if: always()
         run: |
           docker-compose down
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: artifact-with-test-results
+          path: ${{ github.workspace }}/report.html
