@@ -33,9 +33,27 @@ jobs:
 
       - name: Run pytest test
         run: |
-          python -m pytest --html=report.html -v test/
+          python -m pytest --html=index.html --self-contained-html -v test/
 
       - name: Stop container
         if: always()
         run: |
           docker-compose down
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: artifact-with-test-results
+          path: ${{ github.workspace }}/index.html
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: artifacts
+
+      - name: Deploy report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: artifacts/artifact-with-test-results/
