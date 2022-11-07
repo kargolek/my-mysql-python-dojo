@@ -47,6 +47,11 @@ jobs:
           name: artifact-with-test-results
           path: ${{ github.workspace }}/report.html
 
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: artifacts
+
       - name: Deploy report
         uses: peaceiris/actions-gh-pages@v3
         with:
