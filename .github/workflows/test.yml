@@ -46,3 +46,9 @@ jobs:
         with:
           name: artifact-with-test-results
           path: ${{ github.workspace }}/report.html
+
+      - name: Deploy report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: artifacts/artifact-with-test-results/
