@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>index.html</h1>
-    <p>Report generated on 08-Nov-2022 at 22:11:48 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 08-Nov-2022 at 22:25:18 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -451,8 +451,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>55 tests ran in 0.42 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">55 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>56 tests ran in 0.33 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">56 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -467,7 +467,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_customer_countries_and_group_them</td>
-          <td class="col-duration">0.02</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -3950,7 +3950,7 @@ Size: 305
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_total_orders_and_price_per_year_per_product_with_rollup</td>
-          <td class="col-duration">0.04</td>
+          <td class="col-duration">0.03</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -4621,12 +4621,12 @@ Size: 9
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employees_who_sell_most_products</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FROM    (SELECT employeeId,    SUM(quantity) AS ordersQuantity,    SUM(unitPrice * quantity) as totalPrice    FROM OrderDetail    INNER JOIN SalesOrder USING (orderId)    INNER JOIN Employee USING (employeeId)    GROUP BY employeeId) as empQuantity INNER JOIN Employee USING (employeeId) ORDER BY ordersQuantity DESC;
+SQL query: SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FROM    (SELECT employeeId,    SUM(quantity) AS ordersQuantity,    SUM(unitPrice * quantity) AS totalPrice    FROM OrderDetail    INNER JOIN SalesOrder USING (orderId)    INNER JOIN Employee USING (employeeId)    GROUP BY employeeId) AS empQuantity INNER JOIN Employee USING (employeeId) ORDER BY ordersQuantity DESC;
 (&#x27;employeeId&#x27;, &#x27;firstName&#x27;, &#x27;lastName&#x27;, &#x27;ordersQuantity&#x27;, &#x27;totalPrice&#x27;)
 (4, &#x27;Yael&#x27;, &#x27;Peled&#x27;, Decimal(&#x27;9798&#x27;), Decimal(&#x27;250187.45&#x27;))
 (3, &#x27;Judy&#x27;, &#x27;Lew&#x27;, Decimal(&#x27;7852&#x27;), Decimal(&#x27;213051.30&#x27;))
@@ -4638,4 +4638,20 @@ SQL query: SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FR
 (5, &#x27;Sven&#x27;, &#x27;Buck&#x27;, Decimal(&#x27;3036&#x27;), Decimal(&#x27;75567.75&#x27;))
 (9, &#x27;Zoya&#x27;, &#x27;Dolgopyatova&#x27;, Decimal(&#x27;2670&#x27;), Decimal(&#x27;82964.00&#x27;))
 Size: 9
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employees_who_sell_most_products_having_more_than_200000</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FROM    (SELECT employeeId,    SUM(quantity) AS ordersQuantity,    SUM(unitPrice * quantity) AS totalPrice    FROM OrderDetail    INNER JOIN SalesOrder USING (orderId)    INNER JOIN Employee USING (employeeId)    GROUP BY employeeId   HAVING totalPrice &gt; 200000) AS empQuantity INNER JOIN Employee USING (employeeId) ORDER BY ordersQuantity DESC;
+(&#x27;employeeId&#x27;, &#x27;firstName&#x27;, &#x27;lastName&#x27;, &#x27;ordersQuantity&#x27;, &#x27;totalPrice&#x27;)
+(4, &#x27;Yael&#x27;, &#x27;Peled&#x27;, Decimal(&#x27;9798&#x27;), Decimal(&#x27;250187.45&#x27;))
+(3, &#x27;Judy&#x27;, &#x27;Lew&#x27;, Decimal(&#x27;7852&#x27;), Decimal(&#x27;213051.30&#x27;))
+(1, &#x27;Sara&#x27;, &#x27;Davis&#x27;, Decimal(&#x27;7812&#x27;), Decimal(&#x27;202143.71&#x27;))
+Size: 3
 <br/></div></td></tr></tbody></table></body></html>
