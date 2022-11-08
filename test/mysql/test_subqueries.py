@@ -10,3 +10,6 @@ class TestSubQueries:
                                         'FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge '
                                         'FROM Employee '
                                         'ORDER BY employmentAge DESC) AS EmpDate;')
+
+        assert data[0] == (4, 'Yael', 'Peled', 55)
+        assert data[8] == (9, 'Zoya', 'Dolgopyatova', 28)
