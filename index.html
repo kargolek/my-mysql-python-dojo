@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>index.html</h1>
-    <p>Report generated on 08-Nov-2022 at 17:05:06 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 08-Nov-2022 at 19:14:46 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -451,8 +451,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>50 tests ran in 0.30 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">50 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>51 tests ran in 0.37 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">51 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -4518,5 +4518,27 @@ SQL query: SELECT CONCAT(lastname, &quot; &quot;, firstname) AS employeeName, bi
 (&#x27;Funk Don&#x27;, datetime.datetime(1962, 2, 19, 0, 0))
 (&#x27;Davis Sara&#x27;, datetime.datetime(1958, 12, 8, 0, 0))
 (&#x27;Peled Yael&#x27;, datetime.datetime(1947, 9, 19, 0, 0))
+Size: 9
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employment_age_when_hired</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT * FROM (SELECT employeeId, firstName, lastName, FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
+(&#x27;employeeId&#x27;, &#x27;firstName&#x27;, &#x27;lastName&#x27;, &#x27;employmentAge&#x27;)
+(4, &#x27;Yael&#x27;, &#x27;Peled&#x27;, 55)
+(1, &#x27;Sara&#x27;, &#x27;Davis&#x27;, 43)
+(2, &#x27;Don&#x27;, &#x27;Funk&#x27;, 40)
+(5, &#x27;Sven&#x27;, &#x27;Buck&#x27;, 38)
+(8, &#x27;Maria&#x27;, &#x27;Cameron&#x27;, 36)
+(7, &#x27;Russell&#x27;, &#x27;King&#x27;, 33)
+(6, &#x27;Paul&#x27;, &#x27;Suurs&#x27;, 30)
+(3, &#x27;Judy&#x27;, &#x27;Lew&#x27;, 28)
+(9, &#x27;Zoya&#x27;, &#x27;Dolgopyatova&#x27;, 28)
 Size: 9
 <br/></div></td></tr></tbody></table></body></html>
