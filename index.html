@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>index.html</h1>
-    <p>Report generated on 08-Nov-2022 at 20:27:45 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 08-Nov-2022 at 22:11:48 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -451,8 +451,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>54 tests ran in 0.43 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">54 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>55 tests ran in 0.42 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">55 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -4283,7 +4283,7 @@ Size: 0
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_query_data.py::TestQueryData::test_should_select_all_from_category</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -4529,7 +4529,7 @@ Size: 9
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT * FROM (SELECT employeeId, firstName, lastName, FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
+SQL query: SELECT * FROM    (SELECT employeeId, firstName, lastName,    FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge    FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
 (&#x27;employeeId&#x27;, &#x27;firstName&#x27;, &#x27;lastName&#x27;, &#x27;employmentAge&#x27;)
 (4, &#x27;Yael&#x27;, &#x27;Peled&#x27;, 55)
 (1, &#x27;Sara&#x27;, &#x27;Davis&#x27;, 43)
@@ -4551,7 +4551,7 @@ Size: 9
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT MAX(employmentAge) as maxAge, MIN(employmentAge) as minAge,AVG(employmentAge) FROM (SELECT employeeId, firstName, lastName, FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
+SQL query: SELECT MAX(employmentAge) as maxAge, MIN(employmentAge) as minAge,AVG(employmentAge) FROM    (SELECT employeeId, firstName, lastName,    FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge    FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
 (&#x27;maxAge&#x27;, &#x27;minAge&#x27;, &#x27;AVG(employmentAge)&#x27;)
 (55, 28, Decimal(&#x27;36.7778&#x27;))
 Size: 1
@@ -4565,7 +4565,7 @@ Size: 1
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productId, productName, unitPrice FROM Product WHERE unitPrice &gt; (SELECT AVG(unitPrice) FROM OrderDetail);
+SQL query: SELECT productId, productName, unitPrice FROM Product WHERE unitPrice &gt;    (SELECT AVG(unitPrice) FROM OrderDetail);
 (&#x27;productId&#x27;, &#x27;productName&#x27;, &#x27;unitPrice&#x27;)
 (7, &#x27;Product HMLNI&#x27;, Decimal(&#x27;30.00&#x27;))
 (8, &#x27;Product WVJFP&#x27;, Decimal(&#x27;40.00&#x27;))
@@ -4604,7 +4604,7 @@ Size: 26
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT custId, contactName, companyName, country, phone FROM Customer WHERE EXISTS( SELECT custId FROM (SELECT custId, COUNT(*) as orders FROM SalesOrder GROUP BY custId) AS CustomerOrders WHERE orders &gt; 15 AND Customer.custId = CustomerOrders.custId);
+SQL query: SELECT custId, contactName, companyName, country, phone FROM Customer WHERE EXISTS( SELECT custId FROM    (SELECT custId, COUNT(*) as orders FROM SalesOrder    GROUP BY custId) AS CustomerOrders WHERE orders &gt; 15 AND Customer.custId = CustomerOrders.custId);
 (&#x27;custId&#x27;, &#x27;contactName&#x27;, &#x27;companyName&#x27;, &#x27;country&#x27;, &#x27;phone&#x27;)
 (5, &#x27;Higginbotham, Tom&#x27;, &#x27;Customer HGVLZ&#x27;, &#x27;Sweden&#x27;, &#x27;0921-67 89 01&#x27;)
 (9, &#x27;Raghav, Amritansh&#x27;, &#x27;Customer RTXGC&#x27;, &#x27;France&#x27;, &#x27;23.45.67.89&#x27;)
@@ -4615,5 +4615,27 @@ SQL query: SELECT custId, contactName, companyName, country, phone FROM Customer
 (63, &#x27;Veronesi, Giorgio&#x27;, &#x27;Customer IRRVL&#x27;, &#x27;Germany&#x27;, &#x27;0372-12345&#x27;)
 (65, &#x27;Moore, Michael&#x27;, &#x27;Customer NYUHS&#x27;, &#x27;USA&#x27;, &#x27;(505) 555-0125&#x27;)
 (71, &#x27;Navarro, Tomás&#x27;, &#x27;Customer LCOUJ&#x27;, &#x27;USA&#x27;, &#x27;(208) 555-0116&#x27;)
+Size: 9
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employees_who_sell_most_products</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FROM    (SELECT employeeId,    SUM(quantity) AS ordersQuantity,    SUM(unitPrice * quantity) as totalPrice    FROM OrderDetail    INNER JOIN SalesOrder USING (orderId)    INNER JOIN Employee USING (employeeId)    GROUP BY employeeId) as empQuantity INNER JOIN Employee USING (employeeId) ORDER BY ordersQuantity DESC;
+(&#x27;employeeId&#x27;, &#x27;firstName&#x27;, &#x27;lastName&#x27;, &#x27;ordersQuantity&#x27;, &#x27;totalPrice&#x27;)
+(4, &#x27;Yael&#x27;, &#x27;Peled&#x27;, Decimal(&#x27;9798&#x27;), Decimal(&#x27;250187.45&#x27;))
+(3, &#x27;Judy&#x27;, &#x27;Lew&#x27;, Decimal(&#x27;7852&#x27;), Decimal(&#x27;213051.30&#x27;))
+(1, &#x27;Sara&#x27;, &#x27;Davis&#x27;, Decimal(&#x27;7812&#x27;), Decimal(&#x27;202143.71&#x27;))
+(2, &#x27;Don&#x27;, &#x27;Funk&#x27;, Decimal(&#x27;6055&#x27;), Decimal(&#x27;177749.26&#x27;))
+(8, &#x27;Maria&#x27;, &#x27;Cameron&#x27;, Decimal(&#x27;5913&#x27;), Decimal(&#x27;133301.03&#x27;))
+(7, &#x27;Russell&#x27;, &#x27;King&#x27;, Decimal(&#x27;4654&#x27;), Decimal(&#x27;141295.99&#x27;))
+(6, &#x27;Paul&#x27;, &#x27;Suurs&#x27;, Decimal(&#x27;3527&#x27;), Decimal(&#x27;78198.10&#x27;))
+(5, &#x27;Sven&#x27;, &#x27;Buck&#x27;, Decimal(&#x27;3036&#x27;), Decimal(&#x27;75567.75&#x27;))
+(9, &#x27;Zoya&#x27;, &#x27;Dolgopyatova&#x27;, Decimal(&#x27;2670&#x27;), Decimal(&#x27;82964.00&#x27;))
 Size: 9
 <br/></div></td></tr></tbody></table></body></html>
