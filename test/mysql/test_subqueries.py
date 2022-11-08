@@ -55,13 +55,30 @@ class TestSubQueries:
         data = fetch_data_print(cursor, 'SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FROM '
                                         '   (SELECT employeeId, '
                                         '   SUM(quantity) AS ordersQuantity, '
-                                        '   SUM(unitPrice * quantity) as totalPrice '
+                                        '   SUM(unitPrice * quantity) AS totalPrice '
                                         '   FROM OrderDetail '
                                         '   INNER JOIN SalesOrder USING (orderId) '
                                         '   INNER JOIN Employee USING (employeeId) '
-                                        '   GROUP BY employeeId) as empQuantity '
+                                        '   GROUP BY employeeId) AS empQuantity '
                                         'INNER JOIN Employee USING (employeeId) '
                                         'ORDER BY ordersQuantity DESC;')
 
         assert data[0] == (4, 'Yael', 'Peled', Decimal('9798'), Decimal('250187.45'))
         assert data[8] == (9, 'Zoya', 'Dolgopyatova', Decimal('2670'), Decimal('82964.00'))
+
+    # MySQL Subquery
+    def test_select_employees_who_sell_most_products_having_more_than_200000(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FROM '
+                                        '   (SELECT employeeId, '
+                                        '   SUM(quantity) AS ordersQuantity, '
+                                        '   SUM(unitPrice * quantity) AS totalPrice '
+                                        '   FROM OrderDetail '
+                                        '   INNER JOIN SalesOrder USING (orderId) '
+                                        '   INNER JOIN Employee USING (employeeId) '
+                                        '   GROUP BY employeeId'
+                                        '   HAVING totalPrice > 200000) AS empQuantity '
+                                        'INNER JOIN Employee USING (employeeId) '
+                                        'ORDER BY ordersQuantity DESC;')
+
+        assert data[0] == (4, 'Yael', 'Peled', Decimal('9798'), Decimal('250187.45'))
+        assert data[2] == (1, 'Sara', 'Davis', Decimal('7812'), Decimal('202143.71'))
