@@ -1,6 +1,7 @@
 import pytest
 from mysql import connector
 
+from test.util.connector_util import fetch_data_print
 from test.util.secrets import Secrets
 
 
@@ -20,3 +21,17 @@ def cursor(msql_connector):
     cursor = msql_connector.cursor()
     yield cursor
     cursor.close()
+
+
+@pytest.fixture()
+def create_total_sales_table(cursor):
+    fetch_data_print(cursor, 'DROP TABLE IF EXISTS TotalSales;')
+    fetch_data_print(cursor, 'CREATE TABLE TotalSales '
+                             'SELECT productName, YEAR(orderDate) as year, '
+                             'COUNT(*) as totalOrders, '
+                             'SUM(OrderDetail.unitPrice * quantity) as totalPrice FROM OrderDetail '
+                             'INNER JOIN Product USING (productId) '
+                             'INNER JOIN SalesOrder USING (orderId) '
+                             'GROUP BY productName, year;')
+    yield
+    fetch_data_print(cursor, 'DROP TABLE IF EXISTS TotalSales;')

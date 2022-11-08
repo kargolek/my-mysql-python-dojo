@@ -1,3 +1,4 @@
+import time
 from decimal import Decimal
 
 from test.util.connector_util import fetch_data_print
@@ -100,3 +101,32 @@ class TestGroupingData:
 
         assert data[0] == ('Product MYNXN', Decimal('0.108333'))
         assert data[1] == ('Product RECZE', Decimal('0.102273'))
+
+    # MySQL ROLLUP clause
+    def test_should_count_total_orders_per_year_per_product_with_rollup(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT productName, YEAR(orderDate) as year, '
+                                        'COUNT(*) as totalOrders FROM OrderDetail '
+                                        'INNER JOIN Product '
+                                        'Product USING (productId) '
+                                        'INNER JOIN SalesOrder '
+                                        'SalesOrder USING (orderId) '
+                                        'GROUP BY productName, year WITH ROLLUP;')
+
+        assert data[0] == ('Product ACRVI', 2006, 4)
+        assert data[3] == ('Product ACRVI', None, 18)
+
+    # MySQL ROLLUP clause
+    def test_should_count_total_orders_and_price_per_year_per_product_with_rollup(self,
+                                                                                  cursor,
+                                                                                  create_total_sales_table):
+        data = fetch_data_print(cursor, 'SELECT IF(GROUPING(productName), "All products", productName) AS product, '
+                                        'IF(GROUPING(year), "All years", year) AS year, '
+                                        'SUM(totalOrders) AS totalOrders, '
+                                        'SUM(totalPrice) AS totalPrice '
+                                        'FROM TotalSales '
+                                        'GROUP BY productName, year WITH ROLLUP;')
+
+        assert data[0] == ('Product ACRVI', '2006', Decimal('4'), Decimal('1643.00'))
+        assert data[3] == ('Product ACRVI', 'All years', Decimal('18'), Decimal('6664.75'))
+        assert data[303] == ('Product ZZZHR', 'All years', Decimal('28'), Decimal('25079.20'))
+        assert data[304] == ('All products', 'All years', Decimal('2155'), Decimal('1354458.59'))
