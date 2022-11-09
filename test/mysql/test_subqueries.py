@@ -9,7 +9,7 @@ class TestSubQueries:
     def test_select_employment_age_when_hired(self, cursor):
         data = fetch_data_print(cursor, 'SELECT * FROM '
                                         '   (SELECT employeeId, firstName, lastName, '
-                                        '   FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge '
+                                        '   FLOOR((DATEDIFF(hireDate, birthDate) / 365)) AS employmentAge '
                                         '   FROM Employee '
                                         'ORDER BY employmentAge DESC) AS EmpDate;')
 
@@ -18,11 +18,11 @@ class TestSubQueries:
 
     # MySQL Subquery
     def test_select_employment_max_min_avg_age_when_hired(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT MAX(employmentAge) as maxAge, '
-                                        'MIN(employmentAge) as minAge,'
+        data = fetch_data_print(cursor, 'SELECT MAX(employmentAge) AS maxAge, '
+                                        'MIN(employmentAge) AS minAge,'
                                         'AVG(employmentAge) FROM '
                                         '   (SELECT employeeId, firstName, lastName, '
-                                        '   FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge '
+                                        '   FLOOR((DATEDIFF(hireDate, birthDate) / 365)) AS employmentAge '
                                         '   FROM Employee '
                                         'ORDER BY employmentAge DESC) AS EmpDate;')
 
@@ -42,7 +42,7 @@ class TestSubQueries:
         data = fetch_data_print(cursor, 'SELECT custId, contactName, companyName, country, phone '
                                         'FROM Customer '
                                         'WHERE EXISTS( SELECT custId FROM '
-                                        '   (SELECT custId, COUNT(*) as orders FROM SalesOrder '
+                                        '   (SELECT custId, COUNT(*) AS orders FROM SalesOrder '
                                         '   GROUP BY custId) AS CustomerOrders '
                                         'WHERE orders > 15 '
                                         'AND Customer.custId = CustomerOrders.custId);')
@@ -82,3 +82,23 @@ class TestSubQueries:
 
         assert data[0] == (4, 'Yael', 'Peled', Decimal('9798'), Decimal('250187.45'))
         assert data[2] == (1, 'Sara', 'Davis', Decimal('7812'), Decimal('202143.71'))
+
+    # MySQL Subquery
+    def test_should_count_total_orders_and_price_per_year_per_product_with_rollup(self, cursor):
+        data = fetch_data_print(cursor, 'SELECT IF(GROUPING(productName), "All products", productName) AS product, '
+                                        'IF(GROUPING(year), "All years", year) AS year, '
+                                        'SUM(totalOrders) AS totalOrders, '
+                                        'SUM(totalPrice) AS totalPrice '
+                                        'FROM '
+                                        '   (SELECT productName, YEAR(orderDate) AS year, '
+                                        '   COUNT(*) AS totalOrders, '
+                                        '   SUM(OrderDetail.unitPrice * quantity) AS totalPrice FROM OrderDetail '
+                                        '   INNER JOIN Product USING (productId) '
+                                        '   INNER JOIN SalesOrder USING (orderId) '
+                                        '   GROUP BY productName, year) AS TotalSales '
+                                        'GROUP BY productName, year WITH ROLLUP;')
+
+        assert data[0] == ('Product ACRVI', '2006', Decimal('4'), Decimal('1643.00'))
+        assert data[3] == ('Product ACRVI', 'All years', Decimal('18'), Decimal('6664.75'))
+        assert data[303] == ('Product ZZZHR', 'All years', Decimal('28'), Decimal('25079.20'))
+        assert data[304] == ('All products', 'All years', Decimal('2155'), Decimal('1354458.59'))

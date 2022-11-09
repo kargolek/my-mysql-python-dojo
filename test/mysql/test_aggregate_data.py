@@ -25,7 +25,7 @@ class TestAggregateData:
 
     # MySQL GROUP BY clause and COUNT() aggregate function
     def test_should_count_customer_countries_occurrence(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT country, COUNT(*) as occurrence FROM Customer '
+        data = fetch_data_print(cursor, 'SELECT country, COUNT(*) AS occurrence FROM Customer '
                                         'GROUP BY country '
                                         'ORDER BY occurrence DESC, country DESC;')
 
@@ -35,7 +35,7 @@ class TestAggregateData:
 
     # MySQL GROUP BY clause and COUNT() aggregate function
     def test_should_count_products_in_order_details(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT Product.productName, COUNT(*) as occurrence FROM OrderDetail '
+        data = fetch_data_print(cursor, 'SELECT Product.productName, COUNT(*) AS occurrence FROM OrderDetail '
                                         'JOIN Product '
                                         'ON Product.productId = OrderDetail.productId '
                                         'GROUP BY Product.productName '
@@ -46,7 +46,7 @@ class TestAggregateData:
 
     # MySQL aggregate function – AVG() function
     def test_should_count_average_products_price_order_details(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT productName, AVG(OrderDetail.unitPrice) as avgPrice FROM OrderDetail '
+        data = fetch_data_print(cursor, 'SELECT productName, AVG(OrderDetail.unitPrice) AS avgPrice FROM OrderDetail '
                                         'JOIN Product '
                                         'Product USING (productId) '
                                         'GROUP BY productName '
@@ -58,7 +58,7 @@ class TestAggregateData:
     # MySQL aggregate function – AVG() function
     def test_should_count_average_discount_per_product_in_order_details(self, cursor):
         data = fetch_data_print(cursor,
-                                'SELECT productName, AVG(OrderDetail.discount) as avgDiscount FROM OrderDetail '
+                                'SELECT productName, AVG(OrderDetail.discount) AS avgDiscount FROM OrderDetail '
                                 'JOIN Product '
                                 'Product USING (productId) '
                                 'GROUP BY productName '
@@ -70,7 +70,7 @@ class TestAggregateData:
     # MySQL aggregate function – SUM() function
     def test_should_select_total_orders_price_in_order_detail_by_each_product(self, cursor):
         data = fetch_data_print(cursor, 'SELECT productName, '
-                                        'SUM(OrderDetail.unitPrice * OrderDetail.quantity) as totalPrice '
+                                        'SUM(OrderDetail.unitPrice * OrderDetail.quantity) AS totalPrice '
                                         'FROM OrderDetail '
                                         'JOIN Product '
                                         'Product USING (productId) '
@@ -83,7 +83,7 @@ class TestAggregateData:
     # MySQL aggregate function – SUM() function
     def test_should_select_sum_of_quantity_by_each_product(self, cursor):
         data = fetch_data_print(cursor, 'SELECT productName, '
-                                        'SUM(OrderDetail.quantity) as totalQuantity '
+                                        'SUM(OrderDetail.quantity) AS totalQuantity '
                                         'FROM OrderDetail '
                                         'JOIN Product '
                                         'Product USING (productId) '
@@ -95,14 +95,14 @@ class TestAggregateData:
 
     # MySQL aggregate function – MIN() function
     def test_should_select_lowest_product_price(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT MIN(unitPrice) as lowestPrice '
+        data = fetch_data_print(cursor, 'SELECT MIN(unitPrice) AS lowestPrice '
                                         'FROM Product;')
 
         assert data[0][0] == Decimal('2.5')
 
     # MySQL aggregate function – MAX() function
     def test_should_select_highest_product_price(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT MAX(unitPrice) as highestPrice '
+        data = fetch_data_print(cursor, 'SELECT MAX(unitPrice) AS highestPrice '
                                         'FROM Product;')
 
         assert data[0][0] == Decimal('263.50')

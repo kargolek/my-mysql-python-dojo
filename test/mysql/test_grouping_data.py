@@ -18,7 +18,7 @@ class TestGroupingData:
 
     # MySQL GROUP BY clause
     def test_should_count_orders_and_group_by_the_year(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT YEAR(orderDate) as year, COUNT(*) as orders FROM SalesOrder '
+        data = fetch_data_print(cursor, 'SELECT YEAR(orderDate) AS year, COUNT(*) AS orders FROM SalesOrder '
                                         'GROUP BY year;')
 
         assert data[0] == (2006, 152)
@@ -27,7 +27,7 @@ class TestGroupingData:
 
     # MySQL GROUP BY clause
     def test_should_count_orders_freight_and_group_by_the_year(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT YEAR(orderDate) as year, SUM(freight) as freight FROM SalesOrder '
+        data = fetch_data_print(cursor, 'SELECT YEAR(orderDate) AS year, SUM(freight) as freight FROM SalesOrder '
                                         'GROUP BY year;')
 
         assert data[0] == (2006, Decimal('10279.87'))
@@ -35,7 +35,7 @@ class TestGroupingData:
 
     # MySQL GROUP BY clause
     def test_should_count_shipped_sales_by_shipper_in_2006(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) as shipped FROM SalesOrder '
+        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) AS shipped FROM SalesOrder '
                                         'JOIN Shipper '
                                         'Shipper USING (shipperId) '
                                         'WHERE YEAR(orderDate) = 2006 '
@@ -47,7 +47,7 @@ class TestGroupingData:
 
     # MySQL GROUP BY clause
     def test_should_count_shipped_sales_by_shipper_in_2007(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) as shipped FROM SalesOrder '
+        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) AS shipped FROM SalesOrder '
                                         'JOIN Shipper '
                                         'Shipper USING (shipperId) '
                                         'WHERE YEAR(orderDate) = 2007 '
@@ -59,7 +59,7 @@ class TestGroupingData:
 
     # MySQL GROUP BY clause
     def test_should_count_shipped_sales_by_shipper_in_2008(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) as shipped FROM SalesOrder '
+        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) AS shipped FROM SalesOrder '
                                         'JOIN Shipper '
                                         'Shipper USING (shipperId) '
                                         'WHERE YEAR(orderDate) = 2008 '
@@ -71,7 +71,7 @@ class TestGroupingData:
 
     # MySQL GROUP BY clause
     def test_should_count_shipped_sales_by_shipper_all_time(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) as shipped FROM SalesOrder '
+        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) AS shipped FROM SalesOrder '
                                         'JOIN Shipper '
                                         'Shipper USING (shipperId) '
                                         'GROUP BY companyName '
@@ -82,7 +82,7 @@ class TestGroupingData:
 
     # MySQL HAVING clause
     def test_should_count_shipped_sales_by_shipper_all_time_more_than_255_shipped(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) as shipped FROM SalesOrder '
+        data = fetch_data_print(cursor, 'SELECT companyName, COUNT(*) AS shipped FROM SalesOrder '
                                         'JOIN Shipper '
                                         'Shipper USING (shipperId) '
                                         'GROUP BY companyName '
@@ -92,7 +92,7 @@ class TestGroupingData:
 
     # MySQL HAVING clause
     def test_should_count_avg_discount_per_product_name_having_more_than_10_percent_in_all_orders(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT productName, AVG(discount) as discounts FROM OrderDetail '
+        data = fetch_data_print(cursor, 'SELECT productName, AVG(discount) AS discounts FROM OrderDetail '
                                         'JOIN Product '
                                         'Product USING (productId) '
                                         'GROUP BY productName '
@@ -104,8 +104,8 @@ class TestGroupingData:
 
     # MySQL ROLLUP clause
     def test_should_count_total_orders_per_year_per_product_with_rollup(self, cursor):
-        data = fetch_data_print(cursor, 'SELECT productName, YEAR(orderDate) as year, '
-                                        'COUNT(*) as totalOrders FROM OrderDetail '
+        data = fetch_data_print(cursor, 'SELECT productName, YEAR(orderDate) AS year, '
+                                        'COUNT(*) AS totalOrders FROM OrderDetail '
                                         'INNER JOIN Product '
                                         'Product USING (productId) '
                                         'INNER JOIN SalesOrder '
