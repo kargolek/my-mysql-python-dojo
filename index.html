@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>index.html</h1>
-    <p>Report generated on 08-Nov-2022 at 22:25:18 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 09-Nov-2022 at 17:22:32 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -451,8 +451,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>56 tests ran in 0.33 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">56 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>57 tests ran in 0.46 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">57 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -467,7 +467,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_customer_countries_and_group_them</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -523,7 +523,7 @@ Size: 4
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT country, COUNT(*) as occurrence FROM Customer GROUP BY country ORDER BY occurrence DESC, country DESC;
+SQL query: SELECT country, COUNT(*) AS occurrence FROM Customer GROUP BY country ORDER BY occurrence DESC, country DESC;
 (&#x27;country&#x27;, &#x27;occurrence&#x27;)
 (&#x27;USA&#x27;, 13)
 (&#x27;Germany&#x27;, 11)
@@ -557,7 +557,7 @@ Size: 21
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT Product.productName, COUNT(*) as occurrence FROM OrderDetail JOIN Product ON Product.productId = OrderDetail.productId GROUP BY Product.productName ORDER BY occurrence DESC, productName DESC;
+SQL query: SELECT Product.productName, COUNT(*) AS occurrence FROM OrderDetail JOIN Product ON Product.productId = OrderDetail.productId GROUP BY Product.productName ORDER BY occurrence DESC, productName DESC;
 (&#x27;productName&#x27;, &#x27;occurrence&#x27;)
 (&#x27;Product UKXRI&#x27;, 54)
 (&#x27;Product XWOXC&#x27;, 51)
@@ -647,7 +647,7 @@ Size: 77
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, AVG(OrderDetail.unitPrice) as avgPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgPrice DESC, productName DESC;
+SQL query: SELECT productName, AVG(OrderDetail.unitPrice) AS avgPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgPrice DESC, productName DESC;
 (&#x27;productName&#x27;, &#x27;avgPrice&#x27;)
 (&#x27;Product QDOMO&#x27;, Decimal(&#x27;245.933333&#x27;))
 (&#x27;Product VJXYN&#x27;, Decimal(&#x27;116.043125&#x27;))
@@ -737,7 +737,7 @@ Size: 77
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, AVG(OrderDetail.discount) as avgDiscount FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgDiscount DESC, productName DESC;
+SQL query: SELECT productName, AVG(OrderDetail.discount) AS avgDiscount FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgDiscount DESC, productName DESC;
 (&#x27;productName&#x27;, &#x27;avgDiscount&#x27;)
 (&#x27;Product MYNXN&#x27;, Decimal(&#x27;0.108333&#x27;))
 (&#x27;Product RECZE&#x27;, Decimal(&#x27;0.102273&#x27;))
@@ -827,7 +827,7 @@ Size: 77
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, SUM(OrderDetail.unitPrice * OrderDetail.quantity) as totalPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalPrice DESC, productName DESC;
+SQL query: SELECT productName, SUM(OrderDetail.unitPrice * OrderDetail.quantity) AS totalPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalPrice DESC, productName DESC;
 (&#x27;productName&#x27;, &#x27;totalPrice&#x27;)
 (&#x27;Product QDOMO&#x27;, Decimal(&#x27;149984.20&#x27;))
 (&#x27;Product VJXYN&#x27;, Decimal(&#x27;87736.40&#x27;))
@@ -917,7 +917,7 @@ Size: 77
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, SUM(OrderDetail.quantity) as totalQuantity FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalQuantity DESC, productName DESC;
+SQL query: SELECT productName, SUM(OrderDetail.quantity) AS totalQuantity FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalQuantity DESC, productName DESC;
 (&#x27;productName&#x27;, &#x27;totalQuantity&#x27;)
 (&#x27;Product WHBYK&#x27;, Decimal(&#x27;1577&#x27;))
 (&#x27;Product UKXRI&#x27;, Decimal(&#x27;1496&#x27;))
@@ -1007,7 +1007,7 @@ Size: 77
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT MIN(unitPrice) as lowestPrice FROM Product;
+SQL query: SELECT MIN(unitPrice) AS lowestPrice FROM Product;
 (&#x27;lowestPrice&#x27;,)
 (Decimal(&#x27;2.50&#x27;),)
 Size: 1
@@ -1021,7 +1021,7 @@ Size: 1
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT MAX(unitPrice) as highestPrice FROM Product;
+SQL query: SELECT MAX(unitPrice) AS highestPrice FROM Product;
 (&#x27;highestPrice&#x27;,)
 (Decimal(&#x27;263.50&#x27;),)
 Size: 1
@@ -3284,7 +3284,7 @@ Size: 3
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_filtering_data.py::TestFilteringData::test_should_select_customer_company_not_start_on_letter_a</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -3512,7 +3512,7 @@ Size: 1
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT YEAR(orderDate) as year, COUNT(*) as orders FROM SalesOrder GROUP BY year;
+SQL query: SELECT YEAR(orderDate) AS year, COUNT(*) AS orders FROM SalesOrder GROUP BY year;
 (&#x27;year&#x27;, &#x27;orders&#x27;)
 (2006, 152)
 (2007, 408)
@@ -3528,7 +3528,7 @@ Size: 3
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT YEAR(orderDate) as year, SUM(freight) as freight FROM SalesOrder GROUP BY year;
+SQL query: SELECT YEAR(orderDate) AS year, SUM(freight) as freight FROM SalesOrder GROUP BY year;
 (&#x27;year&#x27;, &#x27;freight&#x27;)
 (2006, Decimal(&#x27;10279.87&#x27;))
 (2007, Decimal(&#x27;32468.77&#x27;))
@@ -3544,7 +3544,7 @@ Size: 3
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2006 GROUP BY companyName ORDER BY shipped DESC;
+SQL query: SELECT companyName, COUNT(*) AS shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2006 GROUP BY companyName ORDER BY shipped DESC;
 (&#x27;companyName&#x27;, &#x27;shipped&#x27;)
 (&#x27;Shipper ZHISN&#x27;, 58)
 (&#x27;Shipper ETYNR&#x27;, 56)
@@ -3560,7 +3560,7 @@ Size: 3
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2007 GROUP BY companyName ORDER BY shipped DESC;
+SQL query: SELECT companyName, COUNT(*) AS shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2007 GROUP BY companyName ORDER BY shipped DESC;
 (&#x27;companyName&#x27;, &#x27;shipped&#x27;)
 (&#x27;Shipper ETYNR&#x27;, 153)
 (&#x27;Shipper GVSUA&#x27;, 133)
@@ -3576,7 +3576,7 @@ Size: 3
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2008 GROUP BY companyName ORDER BY shipped DESC;
+SQL query: SELECT companyName, COUNT(*) AS shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) WHERE YEAR(orderDate) = 2008 GROUP BY companyName ORDER BY shipped DESC;
 (&#x27;companyName&#x27;, &#x27;shipped&#x27;)
 (&#x27;Shipper ETYNR&#x27;, 117)
 (&#x27;Shipper GVSUA&#x27;, 78)
@@ -3592,7 +3592,7 @@ Size: 3
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) GROUP BY companyName ORDER BY shipped DESC;
+SQL query: SELECT companyName, COUNT(*) AS shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) GROUP BY companyName ORDER BY shipped DESC;
 (&#x27;companyName&#x27;, &#x27;shipped&#x27;)
 (&#x27;Shipper ETYNR&#x27;, 326)
 (&#x27;Shipper ZHISN&#x27;, 255)
@@ -3608,7 +3608,7 @@ Size: 3
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT companyName, COUNT(*) as shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) GROUP BY companyName HAVING shipped &gt; 255;
+SQL query: SELECT companyName, COUNT(*) AS shipped FROM SalesOrder JOIN Shipper Shipper USING (shipperId) GROUP BY companyName HAVING shipped &gt; 255;
 (&#x27;companyName&#x27;, &#x27;shipped&#x27;)
 (&#x27;Shipper ETYNR&#x27;, 326)
 Size: 1
@@ -3622,7 +3622,7 @@ Size: 1
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, AVG(discount) as discounts FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName HAVING discounts &gt; 0.1 ORDER BY discounts DESC;
+SQL query: SELECT productName, AVG(discount) AS discounts FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName HAVING discounts &gt; 0.1 ORDER BY discounts DESC;
 (&#x27;productName&#x27;, &#x27;discounts&#x27;)
 (&#x27;Product MYNXN&#x27;, Decimal(&#x27;0.108333&#x27;))
 (&#x27;Product RECZE&#x27;, Decimal(&#x27;0.102273&#x27;))
@@ -3637,7 +3637,7 @@ Size: 2
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, YEAR(orderDate) as year, COUNT(*) as totalOrders FROM OrderDetail INNER JOIN Product Product USING (productId) INNER JOIN SalesOrder SalesOrder USING (orderId) GROUP BY productName, year WITH ROLLUP;
+SQL query: SELECT productName, YEAR(orderDate) AS year, COUNT(*) AS totalOrders FROM OrderDetail INNER JOIN Product Product USING (productId) INNER JOIN SalesOrder SalesOrder USING (orderId) GROUP BY productName, year WITH ROLLUP;
 (&#x27;productName&#x27;, &#x27;year&#x27;, &#x27;totalOrders&#x27;)
 (&#x27;Product ACRVI&#x27;, 2006, 4)
 (&#x27;Product ACRVI&#x27;, 2007, 7)
@@ -3950,7 +3950,7 @@ Size: 305
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_total_orders_and_price_per_year_per_product_with_rollup</td>
-          <td class="col-duration">0.03</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -3960,7 +3960,7 @@ SQL query: DROP TABLE IF EXISTS TotalSales;
 NO DATA
 Size: 0
 
-SQL query: CREATE TABLE TotalSales SELECT productName, YEAR(orderDate) as year, COUNT(*) as totalOrders, SUM(OrderDetail.unitPrice * quantity) as totalPrice FROM OrderDetail INNER JOIN Product USING (productId) INNER JOIN SalesOrder USING (orderId) GROUP BY productName, year;
+SQL query: CREATE TABLE TotalSales SELECT productName, YEAR(orderDate) AS year, COUNT(*) AS totalOrders, SUM(OrderDetail.unitPrice * quantity) AS totalPrice FROM OrderDetail INNER JOIN Product USING (productId) INNER JOIN SalesOrder USING (orderId) GROUP BY productName, year;
 ()
 NO DATA
 Size: 0
@@ -4529,7 +4529,7 @@ Size: 9
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT * FROM    (SELECT employeeId, firstName, lastName,    FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge    FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
+SQL query: SELECT * FROM    (SELECT employeeId, firstName, lastName,    FLOOR((DATEDIFF(hireDate, birthDate) / 365)) AS employmentAge    FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
 (&#x27;employeeId&#x27;, &#x27;firstName&#x27;, &#x27;lastName&#x27;, &#x27;employmentAge&#x27;)
 (4, &#x27;Yael&#x27;, &#x27;Peled&#x27;, 55)
 (1, &#x27;Sara&#x27;, &#x27;Davis&#x27;, 43)
@@ -4551,7 +4551,7 @@ Size: 9
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT MAX(employmentAge) as maxAge, MIN(employmentAge) as minAge,AVG(employmentAge) FROM    (SELECT employeeId, firstName, lastName,    FLOOR((DATEDIFF(hireDate, birthDate) / 365)) as employmentAge    FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
+SQL query: SELECT MAX(employmentAge) AS maxAge, MIN(employmentAge) AS minAge,AVG(employmentAge) FROM    (SELECT employeeId, firstName, lastName,    FLOOR((DATEDIFF(hireDate, birthDate) / 365)) AS employmentAge    FROM Employee ORDER BY employmentAge DESC) AS EmpDate;
 (&#x27;maxAge&#x27;, &#x27;minAge&#x27;, &#x27;AVG(employmentAge)&#x27;)
 (55, 28, Decimal(&#x27;36.7778&#x27;))
 Size: 1
@@ -4604,7 +4604,7 @@ Size: 26
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT custId, contactName, companyName, country, phone FROM Customer WHERE EXISTS( SELECT custId FROM    (SELECT custId, COUNT(*) as orders FROM SalesOrder    GROUP BY custId) AS CustomerOrders WHERE orders &gt; 15 AND Customer.custId = CustomerOrders.custId);
+SQL query: SELECT custId, contactName, companyName, country, phone FROM Customer WHERE EXISTS( SELECT custId FROM    (SELECT custId, COUNT(*) AS orders FROM SalesOrder    GROUP BY custId) AS CustomerOrders WHERE orders &gt; 15 AND Customer.custId = CustomerOrders.custId);
 (&#x27;custId&#x27;, &#x27;contactName&#x27;, &#x27;companyName&#x27;, &#x27;country&#x27;, &#x27;phone&#x27;)
 (5, &#x27;Higginbotham, Tom&#x27;, &#x27;Customer HGVLZ&#x27;, &#x27;Sweden&#x27;, &#x27;0921-67 89 01&#x27;)
 (9, &#x27;Raghav, Amritansh&#x27;, &#x27;Customer RTXGC&#x27;, &#x27;France&#x27;, &#x27;23.45.67.89&#x27;)
@@ -4621,7 +4621,7 @@ Size: 9
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employees_who_sell_most_products</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -4643,7 +4643,7 @@ Size: 9
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employees_who_sell_most_products_having_more_than_200000</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -4654,4 +4654,322 @@ SQL query: SELECT employeeId, firstName, lastName, ordersQuantity, totalPrice FR
 (3, &#x27;Judy&#x27;, &#x27;Lew&#x27;, Decimal(&#x27;7852&#x27;), Decimal(&#x27;213051.30&#x27;))
 (1, &#x27;Sara&#x27;, &#x27;Davis&#x27;, Decimal(&#x27;7812&#x27;), Decimal(&#x27;202143.71&#x27;))
 Size: 3
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_should_count_total_orders_and_price_per_year_per_product_with_rollup</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT IF(GROUPING(productName), &quot;All products&quot;, productName) AS product, IF(GROUPING(year), &quot;All years&quot;, year) AS year, SUM(totalOrders) AS totalOrders, SUM(totalPrice) AS totalPrice FROM    (SELECT productName, YEAR(orderDate) AS year,    COUNT(*) AS totalOrders,    SUM(OrderDetail.unitPrice * quantity) AS totalPrice FROM OrderDetail    INNER JOIN Product USING (productId)    INNER JOIN SalesOrder USING (orderId)    GROUP BY productName, year) AS TotalSales GROUP BY productName, year WITH ROLLUP;
+(&#x27;product&#x27;, &#x27;year&#x27;, &#x27;totalOrders&#x27;, &#x27;totalPrice&#x27;)
+(&#x27;Product ACRVI&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;1643.00&#x27;))
+(&#x27;Product ACRVI&#x27;, &#x27;2007&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;2345.25&#x27;))
+(&#x27;Product ACRVI&#x27;, &#x27;2008&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;2676.50&#x27;))
+(&#x27;Product ACRVI&#x27;, &#x27;All years&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;6664.75&#x27;))
+(&#x27;Product AOZBW&#x27;, &#x27;2007&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;8536.00&#x27;))
+(&#x27;Product AOZBW&#x27;, &#x27;2008&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;291.00&#x27;))
+(&#x27;Product AOZBW&#x27;, &#x27;All years&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;8827.00&#x27;))
+(&#x27;Product APITJ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;6911.20&#x27;))
+(&#x27;Product APITJ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;19&#x27;), Decimal(&#x27;26065.40&#x27;))
+(&#x27;Product APITJ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;11766.00&#x27;))
+(&#x27;Product APITJ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;39&#x27;), Decimal(&#x27;44742.60&#x27;))
+(&#x27;Product AQOKR&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;114.00&#x27;))
+(&#x27;Product AQOKR&#x27;, &#x27;2007&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;3667.00&#x27;))
+(&#x27;Product AQOKR&#x27;, &#x27;2008&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;959.50&#x27;))
+(&#x27;Product AQOKR&#x27;, &#x27;All years&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;4740.50&#x27;))
+(&#x27;Product ASTMN&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;394.00&#x27;))
+(&#x27;Product ASTMN&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;814.50&#x27;))
+(&#x27;Product ASTMN&#x27;, &#x27;2008&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;505.00&#x27;))
+(&#x27;Product ASTMN&#x27;, &#x27;All years&#x27;, Decimal(&#x27;32&#x27;), Decimal(&#x27;1713.50&#x27;))
+(&#x27;Product BIUDV&#x27;, &#x27;2006&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;390.00&#x27;))
+(&#x27;Product BIUDV&#x27;, &#x27;2007&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;2226.25&#x27;))
+(&#x27;Product BIUDV&#x27;, &#x27;2008&#x27;, Decimal(&#x27;3&#x27;), Decimal(&#x27;893.75&#x27;))
+(&#x27;Product BIUDV&#x27;, &#x27;All years&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;3510.00&#x27;))
+(&#x27;Product BKAZJ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1128.00&#x27;))
+(&#x27;Product BKAZJ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;1038.00&#x27;))
+(&#x27;Product BKAZJ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;400.00&#x27;))
+(&#x27;Product BKAZJ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;2566.00&#x27;))
+(&#x27;Product BKGEA&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;5528.20&#x27;))
+(&#x27;Product BKGEA&#x27;, &#x27;2007&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;10766.80&#x27;))
+(&#x27;Product BKGEA&#x27;, &#x27;2008&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;5215.20&#x27;))
+(&#x27;Product BKGEA&#x27;, &#x27;All years&#x27;, Decimal(&#x27;30&#x27;), Decimal(&#x27;21510.20&#x27;))
+(&#x27;Product BLCAX&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;7300.80&#x27;))
+(&#x27;Product BLCAX&#x27;, &#x27;2007&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;19718.40&#x27;))
+(&#x27;Product BLCAX&#x27;, &#x27;2008&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;8463.00&#x27;))
+(&#x27;Product BLCAX&#x27;, &#x27;All years&#x27;, Decimal(&#x27;37&#x27;), Decimal(&#x27;35482.20&#x27;))
+(&#x27;Product BWRLG&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;744.00&#x27;))
+(&#x27;Product BWRLG&#x27;, &#x27;2007&#x27;, Decimal(&#x27;25&#x27;), Decimal(&#x27;4767.80&#x27;))
+(&#x27;Product BWRLG&#x27;, &#x27;2008&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;3138.75&#x27;))
+(&#x27;Product BWRLG&#x27;, &#x27;All years&#x27;, Decimal(&#x27;46&#x27;), Decimal(&#x27;8650.55&#x27;))
+(&#x27;Product CBRRL&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;1132.80&#x27;))
+(&#x27;Product CBRRL&#x27;, &#x27;2007&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;3079.20&#x27;))
+(&#x27;Product CBRRL&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;1932.00&#x27;))
+(&#x27;Product CBRRL&#x27;, &#x27;All years&#x27;, Decimal(&#x27;27&#x27;), Decimal(&#x27;6144.00&#x27;))
+(&#x27;Product CKEDC&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;5300.00&#x27;))
+(&#x27;Product CKEDC&#x27;, &#x27;2007&#x27;, Decimal(&#x27;12&#x27;), Decimal(&#x27;17250.00&#x27;))
+(&#x27;Product CKEDC&#x27;, &#x27;2008&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;9437.50&#x27;))
+(&#x27;Product CKEDC&#x27;, &#x27;All years&#x27;, Decimal(&#x27;27&#x27;), Decimal(&#x27;31987.50&#x27;))
+(&#x27;Product COAXA&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;4291.20&#x27;))
+(&#x27;Product COAXA&#x27;, &#x27;2007&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;15156.00&#x27;))
+(&#x27;Product COAXA&#x27;, &#x27;2008&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;4860.00&#x27;))
+(&#x27;Product COAXA&#x27;, &#x27;All years&#x27;, Decimal(&#x27;31&#x27;), Decimal(&#x27;24307.20&#x27;))
+(&#x27;Product CPHFY&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;100.80&#x27;))
+(&#x27;Product CPHFY&#x27;, &#x27;2007&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;4338.60&#x27;))
+(&#x27;Product CPHFY&#x27;, &#x27;2008&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;2793.00&#x27;))
+(&#x27;Product CPHFY&#x27;, &#x27;All years&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;7232.40&#x27;))
+(&#x27;Product EPEIM&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;2193.00&#x27;))
+(&#x27;Product EPEIM&#x27;, &#x27;2007&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;405.65&#x27;))
+(&#x27;Product EPEIM&#x27;, &#x27;2008&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;3202.50&#x27;))
+(&#x27;Product EPEIM&#x27;, &#x27;All years&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;5801.15&#x27;))
+(&#x27;Product EVFFA&#x27;, &#x27;2006&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;603.20&#x27;))
+(&#x27;Product EVFFA&#x27;, &#x27;2007&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;676.00&#x27;))
+(&#x27;Product EVFFA&#x27;, &#x27;2008&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;1768.00&#x27;))
+(&#x27;Product EVFFA&#x27;, &#x27;All years&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;3047.20&#x27;))
+(&#x27;Product EZZPR&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;121.60&#x27;))
+(&#x27;Product EZZPR&#x27;, &#x27;2007&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;3192.00&#x27;))
+(&#x27;Product EZZPR&#x27;, &#x27;2008&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1045.00&#x27;))
+(&#x27;Product EZZPR&#x27;, &#x27;All years&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;4358.60&#x27;))
+(&#x27;Product FPYPN&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;1920.00&#x27;))
+(&#x27;Product FPYPN&#x27;, &#x27;2007&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;3240.00&#x27;))
+(&#x27;Product FPYPN&#x27;, &#x27;2008&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;4340.00&#x27;))
+(&#x27;Product FPYPN&#x27;, &#x27;All years&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;9500.00&#x27;))
+(&#x27;Product GEEOO&#x27;, &#x27;2006&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;7263.00&#x27;))
+(&#x27;Product GEEOO&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;11759.40&#x27;))
+(&#x27;Product GEEOO&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;6716.40&#x27;))
+(&#x27;Product GEEOO&#x27;, &#x27;All years&#x27;, Decimal(&#x27;38&#x27;), Decimal(&#x27;25738.80&#x27;))
+(&#x27;Product GMKIJ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;2933.60&#x27;))
+(&#x27;Product GMKIJ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;7163.00&#x27;))
+(&#x27;Product GMKIJ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;4446.00&#x27;))
+(&#x27;Product GMKIJ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;31&#x27;), Decimal(&#x27;14542.60&#x27;))
+(&#x27;Product HCQDE&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;3298.40&#x27;))
+(&#x27;Product HCQDE&#x27;, &#x27;2007&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;8571.85&#x27;))
+(&#x27;Product HCQDE&#x27;, &#x27;2008&#x27;, Decimal(&#x27;12&#x27;), Decimal(&#x27;11138.75&#x27;))
+(&#x27;Product HCQDE&#x27;, &#x27;All years&#x27;, Decimal(&#x27;30&#x27;), Decimal(&#x27;23009.00&#x27;))
+(&#x27;Product HHYDP&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;1800.00&#x27;))
+(&#x27;Product HHYDP&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;5295.60&#x27;))
+(&#x27;Product HHYDP&#x27;, &#x27;2008&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;7182.00&#x27;))
+(&#x27;Product HHYDP&#x27;, &#x27;All years&#x27;, Decimal(&#x27;38&#x27;), Decimal(&#x27;14277.60&#x27;))
+(&#x27;Product HLGZA&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;3984.00&#x27;))
+(&#x27;Product HLGZA&#x27;, &#x27;2007&#x27;, Decimal(&#x27;19&#x27;), Decimal(&#x27;10961.37&#x27;))
+(&#x27;Product HLGZA&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;6589.53&#x27;))
+(&#x27;Product HLGZA&#x27;, &#x27;All years&#x27;, Decimal(&#x27;32&#x27;), Decimal(&#x27;21534.90&#x27;))
+(&#x27;Product HMLNI&#x27;, &#x27;2006&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;600.00&#x27;))
+(&#x27;Product HMLNI&#x27;, &#x27;2007&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;9444.00&#x27;))
+(&#x27;Product HMLNI&#x27;, &#x27;2008&#x27;, Decimal(&#x27;17&#x27;), Decimal(&#x27;12420.00&#x27;))
+(&#x27;Product HMLNI&#x27;, &#x27;All years&#x27;, Decimal(&#x27;29&#x27;), Decimal(&#x27;22464.00&#x27;))
+(&#x27;Product ICKNK&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;3825.90&#x27;))
+(&#x27;Product ICKNK&#x27;, &#x27;2007&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;7417.10&#x27;))
+(&#x27;Product ICKNK&#x27;, &#x27;2008&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;6453.30&#x27;))
+(&#x27;Product ICKNK&#x27;, &#x27;All years&#x27;, Decimal(&#x27;17&#x27;), Decimal(&#x27;17696.30&#x27;))
+(&#x27;Product IMEHJ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;240.00&#x27;))
+(&#x27;Product IMEHJ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;1760.00&#x27;))
+(&#x27;Product IMEHJ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;1080.00&#x27;))
+(&#x27;Product IMEHJ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;12&#x27;), Decimal(&#x27;3080.00&#x27;))
+(&#x27;Product JLUDZ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;3&#x27;), Decimal(&#x27;756.00&#x27;))
+(&#x27;Product JLUDZ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;2392.20&#x27;))
+(&#x27;Product JLUDZ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;1692.00&#x27;))
+(&#x27;Product JLUDZ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;20&#x27;), Decimal(&#x27;4840.20&#x27;))
+(&#x27;Product JYGFE&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;2102.40&#x27;))
+(&#x27;Product JYGFE&#x27;, &#x27;2007&#x27;, Decimal(&#x27;19&#x27;), Decimal(&#x27;7707.60&#x27;))
+(&#x27;Product JYGFE&#x27;, &#x27;2008&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;6984.00&#x27;))
+(&#x27;Product JYGFE&#x27;, &#x27;All years&#x27;, Decimal(&#x27;39&#x27;), Decimal(&#x27;16794.00&#x27;))
+(&#x27;Product KSBRM&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1883.20&#x27;))
+(&#x27;Product KSBRM&#x27;, &#x27;2007&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;5737.60&#x27;))
+(&#x27;Product KSBRM&#x27;, &#x27;2008&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1804.00&#x27;))
+(&#x27;Product KSBRM&#x27;, &#x27;All years&#x27;, Decimal(&#x27;20&#x27;), Decimal(&#x27;9424.80&#x27;))
+(&#x27;Product KSZOI&#x27;, &#x27;2006&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;310.00&#x27;))
+(&#x27;Product KSZOI&#x27;, &#x27;2007&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;1503.50&#x27;))
+(&#x27;Product KSZOI&#x27;, &#x27;All years&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;1813.50&#x27;))
+(&#x27;Product LQMGN&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;408.00&#x27;))
+(&#x27;Product LQMGN&#x27;, &#x27;2007&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;3094.00&#x27;))
+(&#x27;Product LQMGN&#x27;, &#x27;2008&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;17.00&#x27;))
+(&#x27;Product LQMGN&#x27;, &#x27;All years&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;3519.00&#x27;))
+(&#x27;Product LSOFL&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;3830.40&#x27;))
+(&#x27;Product LSOFL&#x27;, &#x27;2007&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;4928.40&#x27;))
+(&#x27;Product LSOFL&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;4392.00&#x27;))
+(&#x27;Product LSOFL&#x27;, &#x27;All years&#x27;, Decimal(&#x27;30&#x27;), Decimal(&#x27;13150.80&#x27;))
+(&#x27;Product LUNZZ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;655.20&#x27;))
+(&#x27;Product LUNZZ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;17&#x27;), Decimal(&#x27;5181.80&#x27;))
+(&#x27;Product LUNZZ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;3848.00&#x27;))
+(&#x27;Product LUNZZ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;38&#x27;), Decimal(&#x27;9685.00&#x27;))
+(&#x27;Product LYERX&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;3146.40&#x27;))
+(&#x27;Product LYERX&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;6554.70&#x27;))
+(&#x27;Product LYERX&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;5074.44&#x27;))
+(&#x27;Product LYERX&#x27;, &#x27;All years&#x27;, Decimal(&#x27;32&#x27;), Decimal(&#x27;14775.54&#x27;))
+(&#x27;Product LYLNI&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;795.20&#x27;))
+(&#x27;Product LYLNI&#x27;, &#x27;2007&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;1926.40&#x27;))
+(&#x27;Product LYLNI&#x27;, &#x27;2008&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;1330.00&#x27;))
+(&#x27;Product LYLNI&#x27;, &#x27;All years&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;4051.60&#x27;))
+(&#x27;Product MYMOI&#x27;, &#x27;2006&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;4489.20&#x27;))
+(&#x27;Product MYMOI&#x27;, &#x27;2007&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;9034.30&#x27;))
+(&#x27;Product MYMOI&#x27;, &#x27;2008&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;7353.00&#x27;))
+(&#x27;Product MYMOI&#x27;, &#x27;All years&#x27;, Decimal(&#x27;42&#x27;), Decimal(&#x27;20876.50&#x27;))
+(&#x27;Product MYNXN&#x27;, &#x27;2007&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1440.75&#x27;))
+(&#x27;Product MYNXN&#x27;, &#x27;2008&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;102.00&#x27;))
+(&#x27;Product MYNXN&#x27;, &#x27;All years&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;1542.75&#x27;))
+(&#x27;Product NEVTJ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;3945.60&#x27;))
+(&#x27;Product NEVTJ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;5857.20&#x27;))
+(&#x27;Product NEVTJ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;4734.00&#x27;))
+(&#x27;Product NEVTJ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;36&#x27;), Decimal(&#x27;14536.80&#x27;))
+(&#x27;Product NUNAW&#x27;, &#x27;2006&#x27;, Decimal(&#x27;3&#x27;), Decimal(&#x27;1331.20&#x27;))
+(&#x27;Product NUNAW&#x27;, &#x27;2007&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;3136.00&#x27;))
+(&#x27;Product NUNAW&#x27;, &#x27;2008&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;4704.00&#x27;))
+(&#x27;Product NUNAW&#x27;, &#x27;All years&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;9171.20&#x27;))
+(&#x27;Product OFBNT&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;4914.00&#x27;))
+(&#x27;Product OFBNT&#x27;, &#x27;2007&#x27;, Decimal(&#x27;17&#x27;), Decimal(&#x27;14610.00&#x27;))
+(&#x27;Product OFBNT&#x27;, &#x27;2008&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;7341.60&#x27;))
+(&#x27;Product OFBNT&#x27;, &#x27;All years&#x27;, Decimal(&#x27;33&#x27;), Decimal(&#x27;26865.60&#x27;))
+(&#x27;Product OSFNS&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;364.80&#x27;))
+(&#x27;Product OSFNS&#x27;, &#x27;2007&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;8854.00&#x27;))
+(&#x27;Product OSFNS&#x27;, &#x27;2008&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;3648.00&#x27;))
+(&#x27;Product OSFNS&#x27;, &#x27;All years&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;12866.80&#x27;))
+(&#x27;Product OVLQI&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;2074.80&#x27;))
+(&#x27;Product OVLQI&#x27;, &#x27;2007&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;2281.50&#x27;))
+(&#x27;Product OVLQI&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;3451.50&#x27;))
+(&#x27;Product OVLQI&#x27;, &#x27;All years&#x27;, Decimal(&#x27;23&#x27;), Decimal(&#x27;7807.80&#x27;))
+(&#x27;Product PAFRH&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;3502.80&#x27;))
+(&#x27;Product PAFRH&#x27;, &#x27;2007&#x27;, Decimal(&#x27;22&#x27;), Decimal(&#x27;9399.50&#x27;))
+(&#x27;Product PAFRH&#x27;, &#x27;2008&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;5845.75&#x27;))
+(&#x27;Product PAFRH&#x27;, &#x27;All years&#x27;, Decimal(&#x27;43&#x27;), Decimal(&#x27;18748.05&#x27;))
+(&#x27;Product POXFU&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;432.00&#x27;))
+(&#x27;Product POXFU&#x27;, &#x27;2007&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;848.40&#x27;))
+(&#x27;Product POXFU&#x27;, &#x27;2008&#x27;, Decimal(&#x27;23&#x27;), Decimal(&#x27;3954.00&#x27;))
+(&#x27;Product POXFU&#x27;, &#x27;All years&#x27;, Decimal(&#x27;40&#x27;), Decimal(&#x27;5234.40&#x27;))
+(&#x27;Product PWCJB&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1581.00&#x27;))
+(&#x27;Product PWCJB&#x27;, &#x27;2007&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;6561.15&#x27;))
+(&#x27;Product PWCJB&#x27;, &#x27;2008&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;488.25&#x27;))
+(&#x27;Product PWCJB&#x27;, &#x27;All years&#x27;, Decimal(&#x27;22&#x27;), Decimal(&#x27;8630.40&#x27;))
+(&#x27;Product QAQRL&#x27;, &#x27;2006&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;908.60&#x27;))
+(&#x27;Product QAQRL&#x27;, &#x27;2007&#x27;, Decimal(&#x27;22&#x27;), Decimal(&#x27;3415.25&#x27;))
+(&#x27;Product QAQRL&#x27;, &#x27;2008&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;797.15&#x27;))
+(&#x27;Product QAQRL&#x27;, &#x27;All years&#x27;, Decimal(&#x27;36&#x27;), Decimal(&#x27;5121.00&#x27;))
+(&#x27;Product QDOMO&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;29512.00&#x27;))
+(&#x27;Product QDOMO&#x27;, &#x27;2007&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;51962.20&#x27;))
+(&#x27;Product QDOMO&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;68510.00&#x27;))
+(&#x27;Product QDOMO&#x27;, &#x27;All years&#x27;, Decimal(&#x27;24&#x27;), Decimal(&#x27;149984.20&#x27;))
+(&#x27;Product QHFFP&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;6868.80&#x27;))
+(&#x27;Product QHFFP&#x27;, &#x27;2007&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;7776.00&#x27;))
+(&#x27;Product QHFFP&#x27;, &#x27;2008&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;8991.00&#x27;))
+(&#x27;Product QHFFP&#x27;, &#x27;All years&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;23635.80&#x27;))
+(&#x27;Product QMVUN&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1814.40&#x27;))
+(&#x27;Product QMVUN&#x27;, &#x27;2007&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;7425.60&#x27;))
+(&#x27;Product QMVUN&#x27;, &#x27;2008&#x27;, Decimal(&#x27;12&#x27;), Decimal(&#x27;4662.00&#x27;))
+(&#x27;Product QMVUN&#x27;, &#x27;All years&#x27;, Decimal(&#x27;38&#x27;), Decimal(&#x27;13902.00&#x27;))
+(&#x27;Product QOGNU&#x27;, &#x27;2006&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;568.80&#x27;))
+(&#x27;Product QOGNU&#x27;, &#x27;2007&#x27;, Decimal(&#x27;19&#x27;), Decimal(&#x27;1756.80&#x27;))
+(&#x27;Product QOGNU&#x27;, &#x27;2008&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;2457.00&#x27;))
+(&#x27;Product QOGNU&#x27;, &#x27;All years&#x27;, Decimal(&#x27;51&#x27;), Decimal(&#x27;4782.60&#x27;))
+(&#x27;Product QSRXF&#x27;, &#x27;2006&#x27;, Decimal(&#x27;3&#x27;), Decimal(&#x27;268.80&#x27;))
+(&#x27;Product QSRXF&#x27;, &#x27;2007&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;2142.00&#x27;))
+(&#x27;Product QSRXF&#x27;, &#x27;2008&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;973.00&#x27;))
+(&#x27;Product QSRXF&#x27;, &#x27;All years&#x27;, Decimal(&#x27;29&#x27;), Decimal(&#x27;3383.80&#x27;))
+(&#x27;Product RECZE&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;3435.20&#x27;))
+(&#x27;Product RECZE&#x27;, &#x27;2007&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;7600.00&#x27;))
+(&#x27;Product RECZE&#x27;, &#x27;2008&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;7524.00&#x27;))
+(&#x27;Product RECZE&#x27;, &#x27;All years&#x27;, Decimal(&#x27;44&#x27;), Decimal(&#x27;18559.20&#x27;))
+(&#x27;Product RJVNM&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;400.40&#x27;))
+(&#x27;Product RJVNM&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;6006.00&#x27;))
+(&#x27;Product RJVNM&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;2926.00&#x27;))
+(&#x27;Product RJVNM&#x27;, &#x27;All years&#x27;, Decimal(&#x27;30&#x27;), Decimal(&#x27;9332.40&#x27;))
+(&#x27;Product SMIOH&#x27;, &#x27;2006&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;1404.00&#x27;))
+(&#x27;Product SMIOH&#x27;, &#x27;2007&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;10974.00&#x27;))
+(&#x27;Product SMIOH&#x27;, &#x27;2008&#x27;, Decimal(&#x27;3&#x27;), Decimal(&#x27;2853.50&#x27;))
+(&#x27;Product SMIOH&#x27;, &#x27;All years&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;15231.50&#x27;))
+(&#x27;Product SWNJY&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1008.00&#x27;))
+(&#x27;Product SWNJY&#x27;, &#x27;2007&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;2240.00&#x27;))
+(&#x27;Product SWNJY&#x27;, &#x27;2008&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;3430.00&#x27;))
+(&#x27;Product SWNJY&#x27;, &#x27;All years&#x27;, Decimal(&#x27;19&#x27;), Decimal(&#x27;6678.00&#x27;))
+(&#x27;Product TBTBL&#x27;, &#x27;2006&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;1330.00&#x27;))
+(&#x27;Product TBTBL&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;4520.00&#x27;))
+(&#x27;Product TBTBL&#x27;, &#x27;2008&#x27;, Decimal(&#x27;9&#x27;), Decimal(&#x27;3512.50&#x27;))
+(&#x27;Product TBTBL&#x27;, &#x27;All years&#x27;, Decimal(&#x27;34&#x27;), Decimal(&#x27;9362.50&#x27;))
+(&#x27;Product TOONT&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;1872.00&#x27;))
+(&#x27;Product TOONT&#x27;, &#x27;2007&#x27;, Decimal(&#x27;17&#x27;), Decimal(&#x27;5880.00&#x27;))
+(&#x27;Product TOONT&#x27;, &#x27;2008&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;3720.00&#x27;))
+(&#x27;Product TOONT&#x27;, &#x27;All years&#x27;, Decimal(&#x27;39&#x27;), Decimal(&#x27;11472.00&#x27;))
+(&#x27;Product TTEEX&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;877.80&#x27;))
+(&#x27;Product TTEEX&#x27;, &#x27;2007&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;5151.60&#x27;))
+(&#x27;Product TTEEX&#x27;, &#x27;2008&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;3068.70&#x27;))
+(&#x27;Product TTEEX&#x27;, &#x27;All years&#x27;, Decimal(&#x27;47&#x27;), Decimal(&#x27;9098.10&#x27;))
+(&#x27;Product UKXRI&#x27;, &#x27;2006&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;10164.00&#x27;))
+(&#x27;Product UKXRI&#x27;, &#x27;2007&#x27;, Decimal(&#x27;31&#x27;), Decimal(&#x27;37917.00&#x27;))
+(&#x27;Product UKXRI&#x27;, &#x27;2008&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;28215.00&#x27;))
+(&#x27;Product UKXRI&#x27;, &#x27;All years&#x27;, Decimal(&#x27;54&#x27;), Decimal(&#x27;76296.00&#x27;))
+(&#x27;Product VAIIV&#x27;, &#x27;2006&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;720.00&#x27;))
+(&#x27;Product VAIIV&#x27;, &#x27;2007&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;2500.00&#x27;))
+(&#x27;Product VAIIV&#x27;, &#x27;2008&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;4125.00&#x27;))
+(&#x27;Product VAIIV&#x27;, &#x27;All years&#x27;, Decimal(&#x27;12&#x27;), Decimal(&#x27;7345.00&#x27;))
+(&#x27;Product VJIEO&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;2139.00&#x27;))
+(&#x27;Product VJIEO&#x27;, &#x27;2007&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;7082.05&#x27;))
+(&#x27;Product VJIEO&#x27;, &#x27;2008&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1303.15&#x27;))
+(&#x27;Product VJIEO&#x27;, &#x27;All years&#x27;, Decimal(&#x27;24&#x27;), Decimal(&#x27;10524.20&#x27;))
+(&#x27;Product VJXYN&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;12177.00&#x27;))
+(&#x27;Product VJXYN&#x27;, &#x27;2007&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;36194.18&#x27;))
+(&#x27;Product VJXYN&#x27;, &#x27;2008&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;39365.22&#x27;))
+(&#x27;Product VJXYN&#x27;, &#x27;All years&#x27;, Decimal(&#x27;32&#x27;), Decimal(&#x27;87736.40&#x27;))
+(&#x27;Product VJZZH&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;440.00&#x27;))
+(&#x27;Product VJZZH&#x27;, &#x27;2007&#x27;, Decimal(&#x27;23&#x27;), Decimal(&#x27;5686.00&#x27;))
+(&#x27;Product VJZZH&#x27;, &#x27;2008&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;3510.00&#x27;))
+(&#x27;Product VJZZH&#x27;, &#x27;All years&#x27;, Decimal(&#x27;39&#x27;), Decimal(&#x27;9636.00&#x27;))
+(&#x27;Product VKCMF&#x27;, &#x27;2006&#x27;, Decimal(&#x27;7&#x27;), Decimal(&#x27;2918.40&#x27;))
+(&#x27;Product VKCMF&#x27;, &#x27;2007&#x27;, Decimal(&#x27;33&#x27;), Decimal(&#x27;34754.80&#x27;))
+(&#x27;Product VKCMF&#x27;, &#x27;2008&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;7448.00&#x27;))
+(&#x27;Product VKCMF&#x27;, &#x27;All years&#x27;, Decimal(&#x27;50&#x27;), Decimal(&#x27;45121.20&#x27;))
+(&#x27;Product WEUJZ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;300.00&#x27;))
+(&#x27;Product WEUJZ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;3720.00&#x27;))
+(&#x27;Product WEUJZ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;180.00&#x27;))
+(&#x27;Product WEUJZ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;14&#x27;), Decimal(&#x27;4200.00&#x27;))
+(&#x27;Product WHBYK&#x27;, &#x27;2006&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;10064.00&#x27;))
+(&#x27;Product WHBYK&#x27;, &#x27;2007&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;21794.00&#x27;))
+(&#x27;Product WHBYK&#x27;, &#x27;2008&#x27;, Decimal(&#x27;19&#x27;), Decimal(&#x27;18428.00&#x27;))
+(&#x27;Product WHBYK&#x27;, &#x27;All years&#x27;, Decimal(&#x27;51&#x27;), Decimal(&#x27;50286.00&#x27;))
+(&#x27;Product WUXYK&#x27;, &#x27;2006&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;9850.00&#x27;))
+(&#x27;Product WUXYK&#x27;, &#x27;2007&#x27;, Decimal(&#x27;22&#x27;), Decimal(&#x27;22673.60&#x27;))
+(&#x27;Product WUXYK&#x27;, &#x27;2008&#x27;, Decimal(&#x27;15&#x27;), Decimal(&#x27;17304.30&#x27;))
+(&#x27;Product WUXYK&#x27;, &#x27;All years&#x27;, Decimal(&#x27;48&#x27;), Decimal(&#x27;49827.90&#x27;))
+(&#x27;Product WVJFP&#x27;, &#x27;2006&#x27;, Decimal(&#x27;2&#x27;), Decimal(&#x27;4480.00&#x27;))
+(&#x27;Product WVJFP&#x27;, &#x27;2007&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;4560.00&#x27;))
+(&#x27;Product WVJFP&#x27;, &#x27;2008&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;4720.00&#x27;))
+(&#x27;Product WVJFP&#x27;, &#x27;All years&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;13760.00&#x27;))
+(&#x27;Product XKXDO&#x27;, &#x27;2006&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;905.20&#x27;))
+(&#x27;Product XKXDO&#x27;, &#x27;2007&#x27;, Decimal(&#x27;21&#x27;), Decimal(&#x27;3211.90&#x27;))
+(&#x27;Product XKXDO&#x27;, &#x27;2008&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;2042.40&#x27;))
+(&#x27;Product XKXDO&#x27;, &#x27;All years&#x27;, Decimal(&#x27;37&#x27;), Decimal(&#x27;6159.50&#x27;))
+(&#x27;Product XLXQF&#x27;, &#x27;2006&#x27;, Decimal(&#x27;1&#x27;), Decimal(&#x27;56.00&#x27;))
+(&#x27;Product XLXQF&#x27;, &#x27;2007&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;910.00&#x27;))
+(&#x27;Product XLXQF&#x27;, &#x27;2008&#x27;, Decimal(&#x27;5&#x27;), Decimal(&#x27;1596.00&#x27;))
+(&#x27;Product XLXQF&#x27;, &#x27;All years&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;2562.00&#x27;))
+(&#x27;Product XWOXC&#x27;, &#x27;2006&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;4440.00&#x27;))
+(&#x27;Product XWOXC&#x27;, &#x27;2007&#x27;, Decimal(&#x27;26&#x27;), Decimal(&#x27;8020.00&#x27;))
+(&#x27;Product XWOXC&#x27;, &#x27;2008&#x27;, Decimal(&#x27;12&#x27;), Decimal(&#x27;3712.50&#x27;))
+(&#x27;Product XWOXC&#x27;, &#x27;All years&#x27;, Decimal(&#x27;51&#x27;), Decimal(&#x27;16172.50&#x27;))
+(&#x27;Product XYWBZ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;8&#x27;), Decimal(&#x27;2604.00&#x27;))
+(&#x27;Product XYWBZ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;18&#x27;), Decimal(&#x27;9898.00&#x27;))
+(&#x27;Product XYWBZ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;2105.00&#x27;))
+(&#x27;Product XYWBZ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;32&#x27;), Decimal(&#x27;14607.00&#x27;))
+(&#x27;Product XYZPE&#x27;, &#x27;2007&#x27;, Decimal(&#x27;13&#x27;), Decimal(&#x27;10539.30&#x27;))
+(&#x27;Product XYZPE&#x27;, &#x27;2008&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;5899.50&#x27;))
+(&#x27;Product XYZPE&#x27;, &#x27;All years&#x27;, Decimal(&#x27;24&#x27;), Decimal(&#x27;16438.80&#x27;))
+(&#x27;Product YHXGE&#x27;, &#x27;2006&#x27;, Decimal(&#x27;4&#x27;), Decimal(&#x27;2108.00&#x27;))
+(&#x27;Product YHXGE&#x27;, &#x27;2007&#x27;, Decimal(&#x27;19&#x27;), Decimal(&#x27;10391.20&#x27;))
+(&#x27;Product YHXGE&#x27;, &#x27;2008&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;9641.00&#x27;))
+(&#x27;Product YHXGE&#x27;, &#x27;All years&#x27;, Decimal(&#x27;33&#x27;), Decimal(&#x27;22140.20&#x27;))
+(&#x27;Product YYWRT&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;4377.60&#x27;))
+(&#x27;Product YYWRT&#x27;, &#x27;2007&#x27;, Decimal(&#x27;16&#x27;), Decimal(&#x27;8990.40&#x27;))
+(&#x27;Product YYWRT&#x27;, &#x27;2008&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;6144.00&#x27;))
+(&#x27;Product YYWRT&#x27;, &#x27;All years&#x27;, Decimal(&#x27;33&#x27;), Decimal(&#x27;19512.00&#x27;))
+(&#x27;Product YZIXQ&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;2998.80&#x27;))
+(&#x27;Product YZIXQ&#x27;, &#x27;2007&#x27;, Decimal(&#x27;25&#x27;), Decimal(&#x27;10474.30&#x27;))
+(&#x27;Product YZIXQ&#x27;, &#x27;2008&#x27;, Decimal(&#x27;10&#x27;), Decimal(&#x27;5575.20&#x27;))
+(&#x27;Product YZIXQ&#x27;, &#x27;All years&#x27;, Decimal(&#x27;41&#x27;), Decimal(&#x27;19048.30&#x27;))
+(&#x27;Product ZZZHR&#x27;, &#x27;2006&#x27;, Decimal(&#x27;6&#x27;), Decimal(&#x27;5004.80&#x27;))
+(&#x27;Product ZZZHR&#x27;, &#x27;2007&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;11518.40&#x27;))
+(&#x27;Product ZZZHR&#x27;, &#x27;2008&#x27;, Decimal(&#x27;11&#x27;), Decimal(&#x27;8556.00&#x27;))
+(&#x27;Product ZZZHR&#x27;, &#x27;All years&#x27;, Decimal(&#x27;28&#x27;), Decimal(&#x27;25079.20&#x27;))
+(&#x27;All products&#x27;, &#x27;All years&#x27;, Decimal(&#x27;2155&#x27;), Decimal(&#x27;1354458.59&#x27;))
+Size: 305
 <br/></div></td></tr></tbody></table></body></html>
