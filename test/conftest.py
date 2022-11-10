@@ -27,9 +27,9 @@ def cursor(msql_connector):
 def create_total_sales_table(cursor):
     fetch_data_print(cursor, 'DROP TABLE IF EXISTS TotalSales;')
     fetch_data_print(cursor, 'CREATE TABLE TotalSales '
-                             'SELECT productName, YEAR(orderDate) as year, '
-                             'COUNT(*) as totalOrders, '
-                             'SUM(OrderDetail.unitPrice * quantity) as totalPrice FROM OrderDetail '
+                             'SELECT productName, YEAR(orderDate) AS year, '
+                             'COUNT(*) AS totalOrders, '
+                             'SUM(OrderDetail.unitPrice * quantity) AS totalPrice FROM OrderDetail '
                              'INNER JOIN Product USING (productId) '
                              'INNER JOIN SalesOrder USING (orderId) '
                              'GROUP BY productName, year;')
