@@ -10,4 +10,3 @@ CREATE TABLE ExampleTable (
   ) ENGINE=INNODB;
 
 INSERT INTO ExampleTable(exId, exName, exDescription) VALUES(1, 'TestName', 'TestDescription');
-

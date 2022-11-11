@@ -15,4 +15,3 @@ class TestSqlFileExecution:
     def test_should_throw_programming_error_for_bad_sql_syntax(self, cursor, drop_example_test_table):
         with pytest.raises(ProgrammingError):
             execute_sql_file(cursor, "sample_error_syntax.sql")
-
