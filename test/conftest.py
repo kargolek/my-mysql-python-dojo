@@ -35,3 +35,9 @@ def create_total_sales_table(cursor):
                              'GROUP BY productName, year;')
     yield
     fetch_data_print(cursor, 'DROP TABLE IF EXISTS TotalSales;')
+
+
+@pytest.fixture(scope='class')
+def drop_example_test_table(cursor):
+    yield
+    fetch_data_print(cursor, 'DROP TABLE IF EXISTS ExampleTable')

@@ -11,4 +11,7 @@
     <option name="versionSpecifier" value="Greater or equal (&gt;=x.y.z)" />
     <option name="modifyBaseFiles" value="true" />
   </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="py.test" />
+  </component>
 </module>
