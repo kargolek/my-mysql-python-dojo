@@ -41,3 +41,21 @@ def create_total_sales_table(cursor):
 def drop_example_test_table(cursor):
     yield
     fetch_data_print(cursor, 'DROP TABLE IF EXISTS ExampleTable')
+
+
+@pytest.fixture(scope='class')
+def staff_committee_fixture(cursor):
+    fetch_data_print(cursor, 'DROP TABLE IF EXISTS StaffCommittee;')
+    fetch_data_print(cursor, 'CREATE TABLE StaffCommittee('
+                             'committeeId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,'
+                             'lastname VARCHAR(255) NOT NULL,'
+                             'firstname VARCHAR(255) NOT NULL);')
+
+    fetch_data_print(cursor, 'INSERT INTO StaffCommittee(lastname, firstname) '
+                             'VALUES ("Lew", "Judy")')
+    fetch_data_print(cursor, 'INSERT INTO StaffCommittee(lastname, firstname) '
+                             'VALUES ("Buck", "Sven")')
+    fetch_data_print(cursor, 'INSERT INTO StaffCommittee(lastname, firstname) '
+                             'VALUES ("King", "Russell")')
+    yield
+    fetch_data_print(cursor, 'DROP TABLE IF EXISTS StaffCommittee;')
