@@ -49,11 +49,13 @@ jobs:
 
       - name: Download Artifacts
         uses: actions/download-artifact@v2
+        if: always()
         with:
           path: artifacts
 
       - name: Deploy report
         uses: peaceiris/actions-gh-pages@v3
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: artifacts/artifact-with-test-results/
