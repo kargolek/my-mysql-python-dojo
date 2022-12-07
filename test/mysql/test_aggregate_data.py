@@ -124,6 +124,5 @@ class TestAggregateData:
 
         assert data[0] == (10248, Decimal('32.38'))
         assert data[829] == (11077, Decimal('8.53'))
-        assert 1 == 0
 
 
