@@ -429,7 +429,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>index.html</h1>
-    <p>Report generated on 07-Dec-2022 at 23:06:35 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 07-Dec-2022 at 23:12:02 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -451,8 +451,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>59 tests ran in 0.40 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">58 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>59 tests ran in 0.46 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">59 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -463,17 +463,580 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
+      <tbody class="passed results-table-row">
         <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_order_id_with_min_freight</td>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_customer_countries_and_group_them</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT country FROM Customer GROUP BY country;
+(&#x27;country&#x27;,)
+(&#x27;Germany&#x27;,)
+(&#x27;Mexico&#x27;,)
+(&#x27;UK&#x27;,)
+(&#x27;Sweden&#x27;,)
+(&#x27;France&#x27;,)
+(&#x27;Spain&#x27;,)
+(&#x27;Canada&#x27;,)
+(&#x27;Argentina&#x27;,)
+(&#x27;Switzerland&#x27;,)
+(&#x27;Brazil&#x27;,)
+(&#x27;Austria&#x27;,)
+(&#x27;Italy&#x27;,)
+(&#x27;Portugal&#x27;,)
+(&#x27;USA&#x27;,)
+(&#x27;Venezuela&#x27;,)
+(&#x27;Ireland&#x27;,)
+(&#x27;Belgium&#x27;,)
+(&#x27;Norway&#x27;,)
+(&#x27;Denmark&#x27;,)
+(&#x27;Finland&#x27;,)
+(&#x27;Poland&#x27;,)
+Size: 21
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_grouped_employee_titles</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test.mysql.test_aggregate_data.TestAggregateData object at 0x7fe59b719890&gt;<br/>cursor = &lt;mysql.connector.cursor_cext.CMySQLCursor object at 0x7fe59c232ed0&gt;<br/><br/>    def test_should_select_order_id_with_min_freight(self, cursor):<br/>        data = fetch_data_print(cursor, &#x27;SELECT orderId, MIN(freight) &#x27;<br/>                                        &#x27;FROM SalesOrder &#x27;<br/>                                        &#x27;GROUP BY orderId;&#x27;)<br/>    <br/>        assert data[0] == (10248, Decimal(&#x27;32.38&#x27;))<br/>        assert data[829] == (11077, Decimal(&#x27;8.53&#x27;))<br/>&gt;       assert 1 == 0<br/><span class="error">E       assert 1 == 0</span><br/><br/>test/mysql/test_aggregate_data.py:127: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT orderId, MIN(freight) FROM SalesOrder GROUP BY orderId;
-(&#x27;orderId&#x27;, &#x27;MIN(freight)&#x27;)
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT title FROM Employee GROUP BY title;
+(&#x27;title&#x27;,)
+(&#x27;CEO&#x27;,)
+(&#x27;Vice President, Sales&#x27;,)
+(&#x27;Sales Manager&#x27;,)
+(&#x27;Sales Representative&#x27;,)
+Size: 4
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_customer_countries_occurrence</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT country, COUNT(*) AS occurrence FROM Customer GROUP BY country ORDER BY occurrence DESC, country DESC;
+(&#x27;country&#x27;, &#x27;occurrence&#x27;)
+(&#x27;USA&#x27;, 13)
+(&#x27;Germany&#x27;, 11)
+(&#x27;France&#x27;, 11)
+(&#x27;Brazil&#x27;, 9)
+(&#x27;UK&#x27;, 7)
+(&#x27;Spain&#x27;, 5)
+(&#x27;Mexico&#x27;, 5)
+(&#x27;Venezuela&#x27;, 4)
+(&#x27;Italy&#x27;, 3)
+(&#x27;Canada&#x27;, 3)
+(&#x27;Argentina&#x27;, 3)
+(&#x27;Switzerland&#x27;, 2)
+(&#x27;Sweden&#x27;, 2)
+(&#x27;Portugal&#x27;, 2)
+(&#x27;Finland&#x27;, 2)
+(&#x27;Denmark&#x27;, 2)
+(&#x27;Belgium&#x27;, 2)
+(&#x27;Austria&#x27;, 2)
+(&#x27;Poland&#x27;, 1)
+(&#x27;Norway&#x27;, 1)
+(&#x27;Ireland&#x27;, 1)
+Size: 21
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_products_in_order_details</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT Product.productName, COUNT(*) AS occurrence FROM OrderDetail JOIN Product ON Product.productId = OrderDetail.productId GROUP BY Product.productName ORDER BY occurrence DESC, productName DESC;
+(&#x27;productName&#x27;, &#x27;occurrence&#x27;)
+(&#x27;Product UKXRI&#x27;, 54)
+(&#x27;Product XWOXC&#x27;, 51)
+(&#x27;Product WHBYK&#x27;, 51)
+(&#x27;Product QOGNU&#x27;, 51)
+(&#x27;Product VKCMF&#x27;, 50)
+(&#x27;Product WUXYK&#x27;, 48)
+(&#x27;Product TTEEX&#x27;, 47)
+(&#x27;Product BWRLG&#x27;, 46)
+(&#x27;Product RECZE&#x27;, 44)
+(&#x27;Product PAFRH&#x27;, 43)
+(&#x27;Product MYMOI&#x27;, 42)
+(&#x27;Product YZIXQ&#x27;, 41)
+(&#x27;Product POXFU&#x27;, 40)
+(&#x27;Product VJZZH&#x27;, 39)
+(&#x27;Product TOONT&#x27;, 39)
+(&#x27;Product JYGFE&#x27;, 39)
+(&#x27;Product APITJ&#x27;, 39)
+(&#x27;Product QMVUN&#x27;, 38)
+(&#x27;Product LUNZZ&#x27;, 38)
+(&#x27;Product HHYDP&#x27;, 38)
+(&#x27;Product GEEOO&#x27;, 38)
+(&#x27;Product XKXDO&#x27;, 37)
+(&#x27;Product BLCAX&#x27;, 37)
+(&#x27;Product QAQRL&#x27;, 36)
+(&#x27;Product NEVTJ&#x27;, 36)
+(&#x27;Product TBTBL&#x27;, 34)
+(&#x27;Product YYWRT&#x27;, 33)
+(&#x27;Product YHXGE&#x27;, 33)
+(&#x27;Product OFBNT&#x27;, 33)
+(&#x27;Product XYWBZ&#x27;, 32)
+(&#x27;Product VJXYN&#x27;, 32)
+(&#x27;Product LYERX&#x27;, 32)
+(&#x27;Product HLGZA&#x27;, 32)
+(&#x27;Product ASTMN&#x27;, 32)
+(&#x27;Product GMKIJ&#x27;, 31)
+(&#x27;Product COAXA&#x27;, 31)
+(&#x27;Product RJVNM&#x27;, 30)
+(&#x27;Product LSOFL&#x27;, 30)
+(&#x27;Product HCQDE&#x27;, 30)
+(&#x27;Product BKGEA&#x27;, 30)
+(&#x27;Product QSRXF&#x27;, 29)
+(&#x27;Product HMLNI&#x27;, 29)
+(&#x27;Product ZZZHR&#x27;, 28)
+(&#x27;Product CKEDC&#x27;, 27)
+(&#x27;Product CBRRL&#x27;, 27)
+(&#x27;Product XYZPE&#x27;, 24)
+(&#x27;Product VJIEO&#x27;, 24)
+(&#x27;Product QDOMO&#x27;, 24)
+(&#x27;Product OVLQI&#x27;, 23)
+(&#x27;Product PWCJB&#x27;, 22)
+(&#x27;Product FPYPN&#x27;, 21)
+(&#x27;Product EZZPR&#x27;, 21)
+(&#x27;Product KSBRM&#x27;, 20)
+(&#x27;Product JLUDZ&#x27;, 20)
+(&#x27;Product SWNJY&#x27;, 19)
+(&#x27;Product LYLNI&#x27;, 18)
+(&#x27;Product ACRVI&#x27;, 18)
+(&#x27;Product ICKNK&#x27;, 17)
+(&#x27;Product QHFFP&#x27;, 16)
+(&#x27;Product NUNAW&#x27;, 15)
+(&#x27;Product WEUJZ&#x27;, 14)
+(&#x27;Product OSFNS&#x27;, 14)
+(&#x27;Product CPHFY&#x27;, 14)
+(&#x27;Product AQOKR&#x27;, 14)
+(&#x27;Product WVJFP&#x27;, 13)
+(&#x27;Product BKAZJ&#x27;, 13)
+(&#x27;Product VAIIV&#x27;, 12)
+(&#x27;Product IMEHJ&#x27;, 12)
+(&#x27;Product XLXQF&#x27;, 10)
+(&#x27;Product EPEIM&#x27;, 10)
+(&#x27;Product BIUDV&#x27;, 10)
+(&#x27;Product SMIOH&#x27;, 9)
+(&#x27;Product LQMGN&#x27;, 8)
+(&#x27;Product MYNXN&#x27;, 6)
+(&#x27;Product KSZOI&#x27;, 6)
+(&#x27;Product EVFFA&#x27;, 6)
+(&#x27;Product AOZBW&#x27;, 5)
+Size: 77
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_average_products_price_order_details</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT productName, AVG(OrderDetail.unitPrice) AS avgPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgPrice DESC, productName DESC;
+(&#x27;productName&#x27;, &#x27;avgPrice&#x27;)
+(&#x27;Product QDOMO&#x27;, Decimal(&#x27;245.933333&#x27;))
+(&#x27;Product VJXYN&#x27;, Decimal(&#x27;116.043125&#x27;))
+(&#x27;Product AOZBW&#x27;, Decimal(&#x27;93.120000&#x27;))
+(&#x27;Product QHFFP&#x27;, Decimal(&#x27;75.937500&#x27;))
+(&#x27;Product CKEDC&#x27;, Decimal(&#x27;59.722222&#x27;))
+(&#x27;Product UKXRI&#x27;, Decimal(&#x27;51.129630&#x27;))
+(&#x27;Product APITJ&#x27;, Decimal(&#x27;50.553846&#x27;))
+(&#x27;Product WUXYK&#x27;, Decimal(&#x27;46.412500&#x27;))
+(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;43.042857&#x27;))
+(&#x27;Product OFBNT&#x27;, Decimal(&#x27;41.975758&#x27;))
+(&#x27;Product SMIOH&#x27;, Decimal(&#x27;40.966667&#x27;))
+(&#x27;Product ICKNK&#x27;, Decimal(&#x27;40.794118&#x27;))
+(&#x27;Product WVJFP&#x27;, Decimal(&#x27;38.769231&#x27;))
+(&#x27;Product OSFNS&#x27;, Decimal(&#x27;36.914286&#x27;))
+(&#x27;Product BLCAX&#x27;, Decimal(&#x27;36.470270&#x27;))
+(&#x27;Product VKCMF&#x27;, Decimal(&#x27;35.416000&#x27;))
+(&#x27;Product COAXA&#x27;, Decimal(&#x27;33.445161&#x27;))
+(&#x27;Product WHBYK&#x27;, Decimal(&#x27;32.133333&#x27;))
+(&#x27;Product GEEOO&#x27;, Decimal(&#x27;32.036842&#x27;))
+(&#x27;Product HCQDE&#x27;, Decimal(&#x27;31.033333&#x27;))
+(&#x27;Product NUNAW&#x27;, Decimal(&#x27;30.720000&#x27;))
+(&#x27;Product BKGEA&#x27;, Decimal(&#x27;30.160000&#x27;))
+(&#x27;Product YHXGE&#x27;, Decimal(&#x27;29.684848&#x27;))
+(&#x27;Product HMLNI&#x27;, Decimal(&#x27;29.172414&#x27;))
+(&#x27;Product HLGZA&#x27;, Decimal(&#x27;28.856250&#x27;))
+(&#x27;Product XYZPE&#x27;, Decimal(&#x27;27.787500&#x27;))
+(&#x27;Product LYERX&#x27;, Decimal(&#x27;24.268125&#x27;))
+(&#x27;Product VAIIV&#x27;, Decimal(&#x27;24.166667&#x27;))
+(&#x27;Product EVFFA&#x27;, Decimal(&#x27;23.400000&#x27;))
+(&#x27;Product YYWRT&#x27;, Decimal(&#x27;22.400000&#x27;))
+(&#x27;Product PWCJB&#x27;, Decimal(&#x27;21.347727&#x27;))
+(&#x27;Product KSBRM&#x27;, Decimal(&#x27;20.680000&#x27;))
+(&#x27;Product CPHFY&#x27;, Decimal(&#x27;20.400000&#x27;))
+(&#x27;Product MYMOI&#x27;, Decimal(&#x27;19.759524&#x27;))
+(&#x27;Product EPEIM&#x27;, Decimal(&#x27;19.610000&#x27;))
+(&#x27;Product QMVUN&#x27;, Decimal(&#x27;19.600000&#x27;))
+(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;19.456250&#x27;))
+(&#x27;Product FPYPN&#x27;, Decimal(&#x27;18.476190&#x27;))
+(&#x27;Product OVLQI&#x27;, Decimal(&#x27;18.143478&#x27;))
+(&#x27;Product VJIEO&#x27;, Decimal(&#x27;18.133333&#x27;))
+(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;17.896774&#x27;))
+(&#x27;Product RECZE&#x27;, Decimal(&#x27;17.877273&#x27;))
+(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;17.226829&#x27;))
+(&#x27;Product HHYDP&#x27;, Decimal(&#x27;17.147368&#x27;))
+(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;17.000000&#x27;))
+(&#x27;Product JYGFE&#x27;, Decimal(&#x27;16.984615&#x27;))
+(&#x27;Product LSOFL&#x27;, Decimal(&#x27;16.680000&#x27;))
+(&#x27;Product PAFRH&#x27;, Decimal(&#x27;16.376744&#x27;))
+(&#x27;Product LQMGN&#x27;, Decimal(&#x27;15.300000&#x27;))
+(&#x27;Product BIUDV&#x27;, Decimal(&#x27;14.950000&#x27;))
+(&#x27;Product KSZOI&#x27;, Decimal(&#x27;14.466667&#x27;))
+(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;14.357143&#x27;))
+(&#x27;Product TOONT&#x27;, Decimal(&#x27;14.153846&#x27;))
+(&#x27;Product XLXQF&#x27;, Decimal(&#x27;13.720000&#x27;))
+(&#x27;Product RJVNM&#x27;, Decimal(&#x27;13.206667&#x27;))
+(&#x27;Product LYLNI&#x27;, Decimal(&#x27;13.066667&#x27;))
+(&#x27;Product SWNJY&#x27;, Decimal(&#x27;12.968421&#x27;))
+(&#x27;Product ACRVI&#x27;, Decimal(&#x27;12.661111&#x27;))
+(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;12.110526&#x27;))
+(&#x27;Product MYNXN&#x27;, Decimal(&#x27;11.900000&#x27;))
+(&#x27;Product XWOXC&#x27;, Decimal(&#x27;11.666667&#x27;))
+(&#x27;Product TBTBL&#x27;, Decimal(&#x27;11.544118&#x27;))
+(&#x27;Product CBRRL&#x27;, Decimal(&#x27;11.111111&#x27;))
+(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;9.500000&#x27;))
+(&#x27;Product VJZZH&#x27;, Decimal(&#x27;9.384615&#x27;))
+(&#x27;Product AQOKR&#x27;, Decimal(&#x27;9.228571&#x27;))
+(&#x27;Product TTEEX&#x27;, Decimal(&#x27;9.193617&#x27;))
+(&#x27;Product EZZPR&#x27;, Decimal(&#x27;9.138095&#x27;))
+(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;8.769231&#x27;))
+(&#x27;Product XKXDO&#x27;, Decimal(&#x27;8.532432&#x27;))
+(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;8.370000&#x27;))
+(&#x27;Product BWRLG&#x27;, Decimal(&#x27;7.379348&#x27;))
+(&#x27;Product QAQRL&#x27;, Decimal(&#x27;6.804167&#x27;))
+(&#x27;Product QSRXF&#x27;, Decimal(&#x27;6.758621&#x27;))
+(&#x27;Product POXFU&#x27;, Decimal(&#x27;5.760000&#x27;))
+(&#x27;Product QOGNU&#x27;, Decimal(&#x27;4.235294&#x27;))
+(&#x27;Product ASTMN&#x27;, Decimal(&#x27;2.328125&#x27;))
+Size: 77
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_average_discount_per_product_in_order_details</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT productName, AVG(OrderDetail.discount) AS avgDiscount FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgDiscount DESC, productName DESC;
+(&#x27;productName&#x27;, &#x27;avgDiscount&#x27;)
+(&#x27;Product MYNXN&#x27;, Decimal(&#x27;0.108333&#x27;))
+(&#x27;Product RECZE&#x27;, Decimal(&#x27;0.102273&#x27;))
+(&#x27;Product AOZBW&#x27;, Decimal(&#x27;0.100000&#x27;))
+(&#x27;Product ACRVI&#x27;, Decimal(&#x27;0.100000&#x27;))
+(&#x27;Product LYLNI&#x27;, Decimal(&#x27;0.086111&#x27;))
+(&#x27;Product LYERX&#x27;, Decimal(&#x27;0.081250&#x27;))
+(&#x27;Product CKEDC&#x27;, Decimal(&#x27;0.079630&#x27;))
+(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;0.079032&#x27;))
+(&#x27;Product HHYDP&#x27;, Decimal(&#x27;0.077632&#x27;))
+(&#x27;Product YYWRT&#x27;, Decimal(&#x27;0.077273&#x27;))
+(&#x27;Product KSBRM&#x27;, Decimal(&#x27;0.075000&#x27;))
+(&#x27;Product EPEIM&#x27;, Decimal(&#x27;0.075000&#x27;))
+(&#x27;Product AQOKR&#x27;, Decimal(&#x27;0.075000&#x27;))
+(&#x27;Product COAXA&#x27;, Decimal(&#x27;0.074194&#x27;))
+(&#x27;Product EZZPR&#x27;, Decimal(&#x27;0.073810&#x27;))
+(&#x27;Product NUNAW&#x27;, Decimal(&#x27;0.073333&#x27;))
+(&#x27;Product QAQRL&#x27;, Decimal(&#x27;0.072222&#x27;))
+(&#x27;Product XYZPE&#x27;, Decimal(&#x27;0.070833&#x27;))
+(&#x27;Product PWCJB&#x27;, Decimal(&#x27;0.067273&#x27;))
+(&#x27;Product PAFRH&#x27;, Decimal(&#x27;0.066977&#x27;))
+(&#x27;Product LSOFL&#x27;, Decimal(&#x27;0.066667&#x27;))
+(&#x27;Product WVJFP&#x27;, Decimal(&#x27;0.065385&#x27;))
+(&#x27;Product OSFNS&#x27;, Decimal(&#x27;0.064286&#x27;))
+(&#x27;Product VJXYN&#x27;, Decimal(&#x27;0.064063&#x27;))
+(&#x27;Product WHBYK&#x27;, Decimal(&#x27;0.063922&#x27;))
+(&#x27;Product CBRRL&#x27;, Decimal(&#x27;0.063704&#x27;))
+(&#x27;Product TOONT&#x27;, Decimal(&#x27;0.062821&#x27;))
+(&#x27;Product XWOXC&#x27;, Decimal(&#x27;0.062745&#x27;))
+(&#x27;Product BLCAX&#x27;, Decimal(&#x27;0.062162&#x27;))
+(&#x27;Product VKCMF&#x27;, Decimal(&#x27;0.062000&#x27;))
+(&#x27;Product VJIEO&#x27;, Decimal(&#x27;0.060417&#x27;))
+(&#x27;Product XLXQF&#x27;, Decimal(&#x27;0.060000&#x27;))
+(&#x27;Product TBTBL&#x27;, Decimal(&#x27;0.058824&#x27;))
+(&#x27;Product QOGNU&#x27;, Decimal(&#x27;0.056863&#x27;))
+(&#x27;Product QMVUN&#x27;, Decimal(&#x27;0.056579&#x27;))
+(&#x27;Product VJZZH&#x27;, Decimal(&#x27;0.056410&#x27;))
+(&#x27;Product XKXDO&#x27;, Decimal(&#x27;0.055405&#x27;))
+(&#x27;Product RJVNM&#x27;, Decimal(&#x27;0.055000&#x27;))
+(&#x27;Product WUXYK&#x27;, Decimal(&#x27;0.054167&#x27;))
+(&#x27;Product JYGFE&#x27;, Decimal(&#x27;0.052564&#x27;))
+(&#x27;Product BWRLG&#x27;, Decimal(&#x27;0.052174&#x27;))
+(&#x27;Product HLGZA&#x27;, Decimal(&#x27;0.051563&#x27;))
+(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;0.051316&#x27;))
+(&#x27;Product APITJ&#x27;, Decimal(&#x27;0.051282&#x27;))
+(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;0.051220&#x27;))
+(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;0.050000&#x27;))
+(&#x27;Product SWNJY&#x27;, Decimal(&#x27;0.050000&#x27;))
+(&#x27;Product EVFFA&#x27;, Decimal(&#x27;0.050000&#x27;))
+(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;0.050000&#x27;))
+(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;0.048438&#x27;))
+(&#x27;Product UKXRI&#x27;, Decimal(&#x27;0.047222&#x27;))
+(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;0.047222&#x27;))
+(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;0.047143&#x27;))
+(&#x27;Product QHFFP&#x27;, Decimal(&#x27;0.046250&#x27;))
+(&#x27;Product QDOMO&#x27;, Decimal(&#x27;0.045833&#x27;))
+(&#x27;Product YHXGE&#x27;, Decimal(&#x27;0.043939&#x27;))
+(&#x27;Product ASTMN&#x27;, Decimal(&#x27;0.043750&#x27;))
+(&#x27;Product MYMOI&#x27;, Decimal(&#x27;0.042857&#x27;))
+(&#x27;Product POXFU&#x27;, Decimal(&#x27;0.042500&#x27;))
+(&#x27;Product QSRXF&#x27;, Decimal(&#x27;0.041379&#x27;))
+(&#x27;Product ICKNK&#x27;, Decimal(&#x27;0.041176&#x27;))
+(&#x27;Product HCQDE&#x27;, Decimal(&#x27;0.041000&#x27;))
+(&#x27;Product TTEEX&#x27;, Decimal(&#x27;0.040426&#x27;))
+(&#x27;Product BKGEA&#x27;, Decimal(&#x27;0.038333&#x27;))
+(&#x27;Product OFBNT&#x27;, Decimal(&#x27;0.037879&#x27;))
+(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;0.037500&#x27;))
+(&#x27;Product LQMGN&#x27;, Decimal(&#x27;0.031250&#x27;))
+(&#x27;Product FPYPN&#x27;, Decimal(&#x27;0.030952&#x27;))
+(&#x27;Product VAIIV&#x27;, Decimal(&#x27;0.030833&#x27;))
+(&#x27;Product OVLQI&#x27;, Decimal(&#x27;0.028261&#x27;))
+(&#x27;Product SMIOH&#x27;, Decimal(&#x27;0.027778&#x27;))
+(&#x27;Product HMLNI&#x27;, Decimal(&#x27;0.027586&#x27;))
+(&#x27;Product BIUDV&#x27;, Decimal(&#x27;0.025000&#x27;))
+(&#x27;Product GEEOO&#x27;, Decimal(&#x27;0.023684&#x27;))
+(&#x27;Product CPHFY&#x27;, Decimal(&#x27;0.021429&#x27;))
+(&#x27;Product KSZOI&#x27;, Decimal(&#x27;0.016667&#x27;))
+(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;0.016667&#x27;))
+Size: 77
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_total_orders_price_in_order_detail_by_each_product</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT productName, SUM(OrderDetail.unitPrice * OrderDetail.quantity) AS totalPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalPrice DESC, productName DESC;
+(&#x27;productName&#x27;, &#x27;totalPrice&#x27;)
+(&#x27;Product QDOMO&#x27;, Decimal(&#x27;149984.20&#x27;))
+(&#x27;Product VJXYN&#x27;, Decimal(&#x27;87736.40&#x27;))
+(&#x27;Product UKXRI&#x27;, Decimal(&#x27;76296.00&#x27;))
+(&#x27;Product WHBYK&#x27;, Decimal(&#x27;50286.00&#x27;))
+(&#x27;Product WUXYK&#x27;, Decimal(&#x27;49827.90&#x27;))
+(&#x27;Product VKCMF&#x27;, Decimal(&#x27;45121.20&#x27;))
+(&#x27;Product APITJ&#x27;, Decimal(&#x27;44742.60&#x27;))
+(&#x27;Product BLCAX&#x27;, Decimal(&#x27;35482.20&#x27;))
+(&#x27;Product CKEDC&#x27;, Decimal(&#x27;31987.50&#x27;))
+(&#x27;Product OFBNT&#x27;, Decimal(&#x27;26865.60&#x27;))
+(&#x27;Product GEEOO&#x27;, Decimal(&#x27;25738.80&#x27;))
+(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;25079.20&#x27;))
+(&#x27;Product COAXA&#x27;, Decimal(&#x27;24307.20&#x27;))
+(&#x27;Product QHFFP&#x27;, Decimal(&#x27;23635.80&#x27;))
+(&#x27;Product HCQDE&#x27;, Decimal(&#x27;23009.00&#x27;))
+(&#x27;Product HMLNI&#x27;, Decimal(&#x27;22464.00&#x27;))
+(&#x27;Product YHXGE&#x27;, Decimal(&#x27;22140.20&#x27;))
+(&#x27;Product HLGZA&#x27;, Decimal(&#x27;21534.90&#x27;))
+(&#x27;Product BKGEA&#x27;, Decimal(&#x27;21510.20&#x27;))
+(&#x27;Product MYMOI&#x27;, Decimal(&#x27;20876.50&#x27;))
+(&#x27;Product YYWRT&#x27;, Decimal(&#x27;19512.00&#x27;))
+(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;19048.30&#x27;))
+(&#x27;Product PAFRH&#x27;, Decimal(&#x27;18748.05&#x27;))
+(&#x27;Product RECZE&#x27;, Decimal(&#x27;18559.20&#x27;))
+(&#x27;Product ICKNK&#x27;, Decimal(&#x27;17696.30&#x27;))
+(&#x27;Product JYGFE&#x27;, Decimal(&#x27;16794.00&#x27;))
+(&#x27;Product XYZPE&#x27;, Decimal(&#x27;16438.80&#x27;))
+(&#x27;Product XWOXC&#x27;, Decimal(&#x27;16172.50&#x27;))
+(&#x27;Product SMIOH&#x27;, Decimal(&#x27;15231.50&#x27;))
+(&#x27;Product LYERX&#x27;, Decimal(&#x27;14775.54&#x27;))
+(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;14607.00&#x27;))
+(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;14542.60&#x27;))
+(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;14536.80&#x27;))
+(&#x27;Product HHYDP&#x27;, Decimal(&#x27;14277.60&#x27;))
+(&#x27;Product QMVUN&#x27;, Decimal(&#x27;13902.00&#x27;))
+(&#x27;Product WVJFP&#x27;, Decimal(&#x27;13760.00&#x27;))
+(&#x27;Product LSOFL&#x27;, Decimal(&#x27;13150.80&#x27;))
+(&#x27;Product OSFNS&#x27;, Decimal(&#x27;12866.80&#x27;))
+(&#x27;Product TOONT&#x27;, Decimal(&#x27;11472.00&#x27;))
+(&#x27;Product VJIEO&#x27;, Decimal(&#x27;10524.20&#x27;))
+(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;9685.00&#x27;))
+(&#x27;Product VJZZH&#x27;, Decimal(&#x27;9636.00&#x27;))
+(&#x27;Product FPYPN&#x27;, Decimal(&#x27;9500.00&#x27;))
+(&#x27;Product KSBRM&#x27;, Decimal(&#x27;9424.80&#x27;))
+(&#x27;Product TBTBL&#x27;, Decimal(&#x27;9362.50&#x27;))
+(&#x27;Product RJVNM&#x27;, Decimal(&#x27;9332.40&#x27;))
+(&#x27;Product NUNAW&#x27;, Decimal(&#x27;9171.20&#x27;))
+(&#x27;Product TTEEX&#x27;, Decimal(&#x27;9098.10&#x27;))
+(&#x27;Product AOZBW&#x27;, Decimal(&#x27;8827.00&#x27;))
+(&#x27;Product BWRLG&#x27;, Decimal(&#x27;8650.55&#x27;))
+(&#x27;Product PWCJB&#x27;, Decimal(&#x27;8630.40&#x27;))
+(&#x27;Product OVLQI&#x27;, Decimal(&#x27;7807.80&#x27;))
+(&#x27;Product VAIIV&#x27;, Decimal(&#x27;7345.00&#x27;))
+(&#x27;Product CPHFY&#x27;, Decimal(&#x27;7232.40&#x27;))
+(&#x27;Product SWNJY&#x27;, Decimal(&#x27;6678.00&#x27;))
+(&#x27;Product ACRVI&#x27;, Decimal(&#x27;6664.75&#x27;))
+(&#x27;Product XKXDO&#x27;, Decimal(&#x27;6159.50&#x27;))
+(&#x27;Product CBRRL&#x27;, Decimal(&#x27;6144.00&#x27;))
+(&#x27;Product EPEIM&#x27;, Decimal(&#x27;5801.15&#x27;))
+(&#x27;Product POXFU&#x27;, Decimal(&#x27;5234.40&#x27;))
+(&#x27;Product QAQRL&#x27;, Decimal(&#x27;5121.00&#x27;))
+(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;4840.20&#x27;))
+(&#x27;Product QOGNU&#x27;, Decimal(&#x27;4782.60&#x27;))
+(&#x27;Product AQOKR&#x27;, Decimal(&#x27;4740.50&#x27;))
+(&#x27;Product EZZPR&#x27;, Decimal(&#x27;4358.60&#x27;))
+(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;4200.00&#x27;))
+(&#x27;Product LYLNI&#x27;, Decimal(&#x27;4051.60&#x27;))
+(&#x27;Product LQMGN&#x27;, Decimal(&#x27;3519.00&#x27;))
+(&#x27;Product BIUDV&#x27;, Decimal(&#x27;3510.00&#x27;))
+(&#x27;Product QSRXF&#x27;, Decimal(&#x27;3383.80&#x27;))
+(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;3080.00&#x27;))
+(&#x27;Product EVFFA&#x27;, Decimal(&#x27;3047.20&#x27;))
+(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;2566.00&#x27;))
+(&#x27;Product XLXQF&#x27;, Decimal(&#x27;2562.00&#x27;))
+(&#x27;Product KSZOI&#x27;, Decimal(&#x27;1813.50&#x27;))
+(&#x27;Product ASTMN&#x27;, Decimal(&#x27;1713.50&#x27;))
+(&#x27;Product MYNXN&#x27;, Decimal(&#x27;1542.75&#x27;))
+Size: 77
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_sum_of_quantity_by_each_product</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT productName, SUM(OrderDetail.quantity) AS totalQuantity FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalQuantity DESC, productName DESC;
+(&#x27;productName&#x27;, &#x27;totalQuantity&#x27;)
+(&#x27;Product WHBYK&#x27;, Decimal(&#x27;1577&#x27;))
+(&#x27;Product UKXRI&#x27;, Decimal(&#x27;1496&#x27;))
+(&#x27;Product XWOXC&#x27;, Decimal(&#x27;1397&#x27;))
+(&#x27;Product VKCMF&#x27;, Decimal(&#x27;1263&#x27;))
+(&#x27;Product PAFRH&#x27;, Decimal(&#x27;1158&#x27;))
+(&#x27;Product BWRLG&#x27;, Decimal(&#x27;1155&#x27;))
+(&#x27;Product QOGNU&#x27;, Decimal(&#x27;1125&#x27;))
+(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;1103&#x27;))
+(&#x27;Product WUXYK&#x27;, Decimal(&#x27;1083&#x27;))
+(&#x27;Product RECZE&#x27;, Decimal(&#x27;1057&#x27;))
+(&#x27;Product MYMOI&#x27;, Decimal(&#x27;1057&#x27;))
+(&#x27;Product VJZZH&#x27;, Decimal(&#x27;1016&#x27;))
+(&#x27;Product TTEEX&#x27;, Decimal(&#x27;981&#x27;))
+(&#x27;Product JYGFE&#x27;, Decimal(&#x27;981&#x27;))
+(&#x27;Product BLCAX&#x27;, Decimal(&#x27;978&#x27;))
+(&#x27;Product YYWRT&#x27;, Decimal(&#x27;903&#x27;))
+(&#x27;Product POXFU&#x27;, Decimal(&#x27;891&#x27;))
+(&#x27;Product APITJ&#x27;, Decimal(&#x27;886&#x27;))
+(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;883&#x27;))
+(&#x27;Product HHYDP&#x27;, Decimal(&#x27;828&#x27;))
+(&#x27;Product TOONT&#x27;, Decimal(&#x27;817&#x27;))
+(&#x27;Product GEEOO&#x27;, Decimal(&#x27;806&#x27;))
+(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;805&#x27;))
+(&#x27;Product TBTBL&#x27;, Decimal(&#x27;799&#x27;))
+(&#x27;Product LSOFL&#x27;, Decimal(&#x27;793&#x27;))
+(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;791&#x27;))
+(&#x27;Product HMLNI&#x27;, Decimal(&#x27;763&#x27;))
+(&#x27;Product QAQRL&#x27;, Decimal(&#x27;755&#x27;))
+(&#x27;Product ASTMN&#x27;, Decimal(&#x27;755&#x27;))
+(&#x27;Product HLGZA&#x27;, Decimal(&#x27;753&#x27;))
+(&#x27;Product VJXYN&#x27;, Decimal(&#x27;746&#x27;))
+(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;745&#x27;))
+(&#x27;Product YHXGE&#x27;, Decimal(&#x27;742&#x27;))
+(&#x27;Product HCQDE&#x27;, Decimal(&#x27;740&#x27;))
+(&#x27;Product XKXDO&#x27;, Decimal(&#x27;723&#x27;))
+(&#x27;Product BKGEA&#x27;, Decimal(&#x27;722&#x27;))
+(&#x27;Product COAXA&#x27;, Decimal(&#x27;714&#x27;))
+(&#x27;Product QMVUN&#x27;, Decimal(&#x27;706&#x27;))
+(&#x27;Product RJVNM&#x27;, Decimal(&#x27;697&#x27;))
+(&#x27;Product OFBNT&#x27;, Decimal(&#x27;640&#x27;))
+(&#x27;Product QDOMO&#x27;, Decimal(&#x27;623&#x27;))
+(&#x27;Product LYERX&#x27;, Decimal(&#x27;612&#x27;))
+(&#x27;Product XYZPE&#x27;, Decimal(&#x27;603&#x27;))
+(&#x27;Product VJIEO&#x27;, Decimal(&#x27;601&#x27;))
+(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;580&#x27;))
+(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;580&#x27;))
+(&#x27;Product CBRRL&#x27;, Decimal(&#x27;548&#x27;))
+(&#x27;Product CKEDC&#x27;, Decimal(&#x27;539&#x27;))
+(&#x27;Product ACRVI&#x27;, Decimal(&#x27;534&#x27;))
+(&#x27;Product FPYPN&#x27;, Decimal(&#x27;520&#x27;))
+(&#x27;Product AQOKR&#x27;, Decimal(&#x27;508&#x27;))
+(&#x27;Product SWNJY&#x27;, Decimal(&#x27;506&#x27;))
+(&#x27;Product QSRXF&#x27;, Decimal(&#x27;500&#x27;))
+(&#x27;Product EZZPR&#x27;, Decimal(&#x27;485&#x27;))
+(&#x27;Product KSBRM&#x27;, Decimal(&#x27;453&#x27;))
+(&#x27;Product ICKNK&#x27;, Decimal(&#x27;445&#x27;))
+(&#x27;Product OVLQI&#x27;, Decimal(&#x27;434&#x27;))
+(&#x27;Product PWCJB&#x27;, Decimal(&#x27;404&#x27;))
+(&#x27;Product WVJFP&#x27;, Decimal(&#x27;372&#x27;))
+(&#x27;Product SMIOH&#x27;, Decimal(&#x27;365&#x27;))
+(&#x27;Product CPHFY&#x27;, Decimal(&#x27;348&#x27;))
+(&#x27;Product OSFNS&#x27;, Decimal(&#x27;344&#x27;))
+(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;328&#x27;))
+(&#x27;Product LYLNI&#x27;, Decimal(&#x27;318&#x27;))
+(&#x27;Product QHFFP&#x27;, Decimal(&#x27;313&#x27;))
+(&#x27;Product VAIIV&#x27;, Decimal(&#x27;301&#x27;))
+(&#x27;Product EPEIM&#x27;, Decimal(&#x27;298&#x27;))
+(&#x27;Product NUNAW&#x27;, Decimal(&#x27;297&#x27;))
+(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;297&#x27;))
+(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;293&#x27;))
+(&#x27;Product LQMGN&#x27;, Decimal(&#x27;239&#x27;))
+(&#x27;Product BIUDV&#x27;, Decimal(&#x27;235&#x27;))
+(&#x27;Product XLXQF&#x27;, Decimal(&#x27;184&#x27;))
+(&#x27;Product MYNXN&#x27;, Decimal(&#x27;138&#x27;))
+(&#x27;Product EVFFA&#x27;, Decimal(&#x27;125&#x27;))
+(&#x27;Product KSZOI&#x27;, Decimal(&#x27;122&#x27;))
+(&#x27;Product AOZBW&#x27;, Decimal(&#x27;95&#x27;))
+Size: 77
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_lowest_product_price</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT MIN(unitPrice) AS lowestPrice FROM Product;
+(&#x27;lowestPrice&#x27;,)
+(Decimal(&#x27;2.50&#x27;),)
+Size: 1
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_highest_product_price</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT MAX(unitPrice) AS highestPrice FROM Product;
+(&#x27;highestPrice&#x27;,)
+(Decimal(&#x27;263.50&#x27;),)
+Size: 1
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_order_id_with_max_freight</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+SQL query: SELECT orderId, MAX(freight) FROM SalesOrder GROUP BY orderId;
+(&#x27;orderId&#x27;, &#x27;MAX(freight)&#x27;)
 (10248, Decimal(&#x27;32.38&#x27;))
 (10249, Decimal(&#x27;11.61&#x27;))
 (10250, Decimal(&#x27;65.83&#x27;))
@@ -1309,577 +1872,14 @@ Size: 830
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_customer_countries_and_group_them</td>
-          <td class="col-duration">0.01</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT country FROM Customer GROUP BY country;
-(&#x27;country&#x27;,)
-(&#x27;Germany&#x27;,)
-(&#x27;Mexico&#x27;,)
-(&#x27;UK&#x27;,)
-(&#x27;Sweden&#x27;,)
-(&#x27;France&#x27;,)
-(&#x27;Spain&#x27;,)
-(&#x27;Canada&#x27;,)
-(&#x27;Argentina&#x27;,)
-(&#x27;Switzerland&#x27;,)
-(&#x27;Brazil&#x27;,)
-(&#x27;Austria&#x27;,)
-(&#x27;Italy&#x27;,)
-(&#x27;Portugal&#x27;,)
-(&#x27;USA&#x27;,)
-(&#x27;Venezuela&#x27;,)
-(&#x27;Ireland&#x27;,)
-(&#x27;Belgium&#x27;,)
-(&#x27;Norway&#x27;,)
-(&#x27;Denmark&#x27;,)
-(&#x27;Finland&#x27;,)
-(&#x27;Poland&#x27;,)
-Size: 21
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_grouped_employee_titles</td>
+          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_order_id_with_min_freight</td>
           <td class="col-duration">0.00</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT title FROM Employee GROUP BY title;
-(&#x27;title&#x27;,)
-(&#x27;CEO&#x27;,)
-(&#x27;Vice President, Sales&#x27;,)
-(&#x27;Sales Manager&#x27;,)
-(&#x27;Sales Representative&#x27;,)
-Size: 4
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_customer_countries_occurrence</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT country, COUNT(*) AS occurrence FROM Customer GROUP BY country ORDER BY occurrence DESC, country DESC;
-(&#x27;country&#x27;, &#x27;occurrence&#x27;)
-(&#x27;USA&#x27;, 13)
-(&#x27;Germany&#x27;, 11)
-(&#x27;France&#x27;, 11)
-(&#x27;Brazil&#x27;, 9)
-(&#x27;UK&#x27;, 7)
-(&#x27;Spain&#x27;, 5)
-(&#x27;Mexico&#x27;, 5)
-(&#x27;Venezuela&#x27;, 4)
-(&#x27;Italy&#x27;, 3)
-(&#x27;Canada&#x27;, 3)
-(&#x27;Argentina&#x27;, 3)
-(&#x27;Switzerland&#x27;, 2)
-(&#x27;Sweden&#x27;, 2)
-(&#x27;Portugal&#x27;, 2)
-(&#x27;Finland&#x27;, 2)
-(&#x27;Denmark&#x27;, 2)
-(&#x27;Belgium&#x27;, 2)
-(&#x27;Austria&#x27;, 2)
-(&#x27;Poland&#x27;, 1)
-(&#x27;Norway&#x27;, 1)
-(&#x27;Ireland&#x27;, 1)
-Size: 21
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_products_in_order_details</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT Product.productName, COUNT(*) AS occurrence FROM OrderDetail JOIN Product ON Product.productId = OrderDetail.productId GROUP BY Product.productName ORDER BY occurrence DESC, productName DESC;
-(&#x27;productName&#x27;, &#x27;occurrence&#x27;)
-(&#x27;Product UKXRI&#x27;, 54)
-(&#x27;Product XWOXC&#x27;, 51)
-(&#x27;Product WHBYK&#x27;, 51)
-(&#x27;Product QOGNU&#x27;, 51)
-(&#x27;Product VKCMF&#x27;, 50)
-(&#x27;Product WUXYK&#x27;, 48)
-(&#x27;Product TTEEX&#x27;, 47)
-(&#x27;Product BWRLG&#x27;, 46)
-(&#x27;Product RECZE&#x27;, 44)
-(&#x27;Product PAFRH&#x27;, 43)
-(&#x27;Product MYMOI&#x27;, 42)
-(&#x27;Product YZIXQ&#x27;, 41)
-(&#x27;Product POXFU&#x27;, 40)
-(&#x27;Product VJZZH&#x27;, 39)
-(&#x27;Product TOONT&#x27;, 39)
-(&#x27;Product JYGFE&#x27;, 39)
-(&#x27;Product APITJ&#x27;, 39)
-(&#x27;Product QMVUN&#x27;, 38)
-(&#x27;Product LUNZZ&#x27;, 38)
-(&#x27;Product HHYDP&#x27;, 38)
-(&#x27;Product GEEOO&#x27;, 38)
-(&#x27;Product XKXDO&#x27;, 37)
-(&#x27;Product BLCAX&#x27;, 37)
-(&#x27;Product QAQRL&#x27;, 36)
-(&#x27;Product NEVTJ&#x27;, 36)
-(&#x27;Product TBTBL&#x27;, 34)
-(&#x27;Product YYWRT&#x27;, 33)
-(&#x27;Product YHXGE&#x27;, 33)
-(&#x27;Product OFBNT&#x27;, 33)
-(&#x27;Product XYWBZ&#x27;, 32)
-(&#x27;Product VJXYN&#x27;, 32)
-(&#x27;Product LYERX&#x27;, 32)
-(&#x27;Product HLGZA&#x27;, 32)
-(&#x27;Product ASTMN&#x27;, 32)
-(&#x27;Product GMKIJ&#x27;, 31)
-(&#x27;Product COAXA&#x27;, 31)
-(&#x27;Product RJVNM&#x27;, 30)
-(&#x27;Product LSOFL&#x27;, 30)
-(&#x27;Product HCQDE&#x27;, 30)
-(&#x27;Product BKGEA&#x27;, 30)
-(&#x27;Product QSRXF&#x27;, 29)
-(&#x27;Product HMLNI&#x27;, 29)
-(&#x27;Product ZZZHR&#x27;, 28)
-(&#x27;Product CKEDC&#x27;, 27)
-(&#x27;Product CBRRL&#x27;, 27)
-(&#x27;Product XYZPE&#x27;, 24)
-(&#x27;Product VJIEO&#x27;, 24)
-(&#x27;Product QDOMO&#x27;, 24)
-(&#x27;Product OVLQI&#x27;, 23)
-(&#x27;Product PWCJB&#x27;, 22)
-(&#x27;Product FPYPN&#x27;, 21)
-(&#x27;Product EZZPR&#x27;, 21)
-(&#x27;Product KSBRM&#x27;, 20)
-(&#x27;Product JLUDZ&#x27;, 20)
-(&#x27;Product SWNJY&#x27;, 19)
-(&#x27;Product LYLNI&#x27;, 18)
-(&#x27;Product ACRVI&#x27;, 18)
-(&#x27;Product ICKNK&#x27;, 17)
-(&#x27;Product QHFFP&#x27;, 16)
-(&#x27;Product NUNAW&#x27;, 15)
-(&#x27;Product WEUJZ&#x27;, 14)
-(&#x27;Product OSFNS&#x27;, 14)
-(&#x27;Product CPHFY&#x27;, 14)
-(&#x27;Product AQOKR&#x27;, 14)
-(&#x27;Product WVJFP&#x27;, 13)
-(&#x27;Product BKAZJ&#x27;, 13)
-(&#x27;Product VAIIV&#x27;, 12)
-(&#x27;Product IMEHJ&#x27;, 12)
-(&#x27;Product XLXQF&#x27;, 10)
-(&#x27;Product EPEIM&#x27;, 10)
-(&#x27;Product BIUDV&#x27;, 10)
-(&#x27;Product SMIOH&#x27;, 9)
-(&#x27;Product LQMGN&#x27;, 8)
-(&#x27;Product MYNXN&#x27;, 6)
-(&#x27;Product KSZOI&#x27;, 6)
-(&#x27;Product EVFFA&#x27;, 6)
-(&#x27;Product AOZBW&#x27;, 5)
-Size: 77
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_average_products_price_order_details</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, AVG(OrderDetail.unitPrice) AS avgPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgPrice DESC, productName DESC;
-(&#x27;productName&#x27;, &#x27;avgPrice&#x27;)
-(&#x27;Product QDOMO&#x27;, Decimal(&#x27;245.933333&#x27;))
-(&#x27;Product VJXYN&#x27;, Decimal(&#x27;116.043125&#x27;))
-(&#x27;Product AOZBW&#x27;, Decimal(&#x27;93.120000&#x27;))
-(&#x27;Product QHFFP&#x27;, Decimal(&#x27;75.937500&#x27;))
-(&#x27;Product CKEDC&#x27;, Decimal(&#x27;59.722222&#x27;))
-(&#x27;Product UKXRI&#x27;, Decimal(&#x27;51.129630&#x27;))
-(&#x27;Product APITJ&#x27;, Decimal(&#x27;50.553846&#x27;))
-(&#x27;Product WUXYK&#x27;, Decimal(&#x27;46.412500&#x27;))
-(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;43.042857&#x27;))
-(&#x27;Product OFBNT&#x27;, Decimal(&#x27;41.975758&#x27;))
-(&#x27;Product SMIOH&#x27;, Decimal(&#x27;40.966667&#x27;))
-(&#x27;Product ICKNK&#x27;, Decimal(&#x27;40.794118&#x27;))
-(&#x27;Product WVJFP&#x27;, Decimal(&#x27;38.769231&#x27;))
-(&#x27;Product OSFNS&#x27;, Decimal(&#x27;36.914286&#x27;))
-(&#x27;Product BLCAX&#x27;, Decimal(&#x27;36.470270&#x27;))
-(&#x27;Product VKCMF&#x27;, Decimal(&#x27;35.416000&#x27;))
-(&#x27;Product COAXA&#x27;, Decimal(&#x27;33.445161&#x27;))
-(&#x27;Product WHBYK&#x27;, Decimal(&#x27;32.133333&#x27;))
-(&#x27;Product GEEOO&#x27;, Decimal(&#x27;32.036842&#x27;))
-(&#x27;Product HCQDE&#x27;, Decimal(&#x27;31.033333&#x27;))
-(&#x27;Product NUNAW&#x27;, Decimal(&#x27;30.720000&#x27;))
-(&#x27;Product BKGEA&#x27;, Decimal(&#x27;30.160000&#x27;))
-(&#x27;Product YHXGE&#x27;, Decimal(&#x27;29.684848&#x27;))
-(&#x27;Product HMLNI&#x27;, Decimal(&#x27;29.172414&#x27;))
-(&#x27;Product HLGZA&#x27;, Decimal(&#x27;28.856250&#x27;))
-(&#x27;Product XYZPE&#x27;, Decimal(&#x27;27.787500&#x27;))
-(&#x27;Product LYERX&#x27;, Decimal(&#x27;24.268125&#x27;))
-(&#x27;Product VAIIV&#x27;, Decimal(&#x27;24.166667&#x27;))
-(&#x27;Product EVFFA&#x27;, Decimal(&#x27;23.400000&#x27;))
-(&#x27;Product YYWRT&#x27;, Decimal(&#x27;22.400000&#x27;))
-(&#x27;Product PWCJB&#x27;, Decimal(&#x27;21.347727&#x27;))
-(&#x27;Product KSBRM&#x27;, Decimal(&#x27;20.680000&#x27;))
-(&#x27;Product CPHFY&#x27;, Decimal(&#x27;20.400000&#x27;))
-(&#x27;Product MYMOI&#x27;, Decimal(&#x27;19.759524&#x27;))
-(&#x27;Product EPEIM&#x27;, Decimal(&#x27;19.610000&#x27;))
-(&#x27;Product QMVUN&#x27;, Decimal(&#x27;19.600000&#x27;))
-(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;19.456250&#x27;))
-(&#x27;Product FPYPN&#x27;, Decimal(&#x27;18.476190&#x27;))
-(&#x27;Product OVLQI&#x27;, Decimal(&#x27;18.143478&#x27;))
-(&#x27;Product VJIEO&#x27;, Decimal(&#x27;18.133333&#x27;))
-(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;17.896774&#x27;))
-(&#x27;Product RECZE&#x27;, Decimal(&#x27;17.877273&#x27;))
-(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;17.226829&#x27;))
-(&#x27;Product HHYDP&#x27;, Decimal(&#x27;17.147368&#x27;))
-(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;17.000000&#x27;))
-(&#x27;Product JYGFE&#x27;, Decimal(&#x27;16.984615&#x27;))
-(&#x27;Product LSOFL&#x27;, Decimal(&#x27;16.680000&#x27;))
-(&#x27;Product PAFRH&#x27;, Decimal(&#x27;16.376744&#x27;))
-(&#x27;Product LQMGN&#x27;, Decimal(&#x27;15.300000&#x27;))
-(&#x27;Product BIUDV&#x27;, Decimal(&#x27;14.950000&#x27;))
-(&#x27;Product KSZOI&#x27;, Decimal(&#x27;14.466667&#x27;))
-(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;14.357143&#x27;))
-(&#x27;Product TOONT&#x27;, Decimal(&#x27;14.153846&#x27;))
-(&#x27;Product XLXQF&#x27;, Decimal(&#x27;13.720000&#x27;))
-(&#x27;Product RJVNM&#x27;, Decimal(&#x27;13.206667&#x27;))
-(&#x27;Product LYLNI&#x27;, Decimal(&#x27;13.066667&#x27;))
-(&#x27;Product SWNJY&#x27;, Decimal(&#x27;12.968421&#x27;))
-(&#x27;Product ACRVI&#x27;, Decimal(&#x27;12.661111&#x27;))
-(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;12.110526&#x27;))
-(&#x27;Product MYNXN&#x27;, Decimal(&#x27;11.900000&#x27;))
-(&#x27;Product XWOXC&#x27;, Decimal(&#x27;11.666667&#x27;))
-(&#x27;Product TBTBL&#x27;, Decimal(&#x27;11.544118&#x27;))
-(&#x27;Product CBRRL&#x27;, Decimal(&#x27;11.111111&#x27;))
-(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;9.500000&#x27;))
-(&#x27;Product VJZZH&#x27;, Decimal(&#x27;9.384615&#x27;))
-(&#x27;Product AQOKR&#x27;, Decimal(&#x27;9.228571&#x27;))
-(&#x27;Product TTEEX&#x27;, Decimal(&#x27;9.193617&#x27;))
-(&#x27;Product EZZPR&#x27;, Decimal(&#x27;9.138095&#x27;))
-(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;8.769231&#x27;))
-(&#x27;Product XKXDO&#x27;, Decimal(&#x27;8.532432&#x27;))
-(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;8.370000&#x27;))
-(&#x27;Product BWRLG&#x27;, Decimal(&#x27;7.379348&#x27;))
-(&#x27;Product QAQRL&#x27;, Decimal(&#x27;6.804167&#x27;))
-(&#x27;Product QSRXF&#x27;, Decimal(&#x27;6.758621&#x27;))
-(&#x27;Product POXFU&#x27;, Decimal(&#x27;5.760000&#x27;))
-(&#x27;Product QOGNU&#x27;, Decimal(&#x27;4.235294&#x27;))
-(&#x27;Product ASTMN&#x27;, Decimal(&#x27;2.328125&#x27;))
-Size: 77
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_count_average_discount_per_product_in_order_details</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, AVG(OrderDetail.discount) AS avgDiscount FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY avgDiscount DESC, productName DESC;
-(&#x27;productName&#x27;, &#x27;avgDiscount&#x27;)
-(&#x27;Product MYNXN&#x27;, Decimal(&#x27;0.108333&#x27;))
-(&#x27;Product RECZE&#x27;, Decimal(&#x27;0.102273&#x27;))
-(&#x27;Product AOZBW&#x27;, Decimal(&#x27;0.100000&#x27;))
-(&#x27;Product ACRVI&#x27;, Decimal(&#x27;0.100000&#x27;))
-(&#x27;Product LYLNI&#x27;, Decimal(&#x27;0.086111&#x27;))
-(&#x27;Product LYERX&#x27;, Decimal(&#x27;0.081250&#x27;))
-(&#x27;Product CKEDC&#x27;, Decimal(&#x27;0.079630&#x27;))
-(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;0.079032&#x27;))
-(&#x27;Product HHYDP&#x27;, Decimal(&#x27;0.077632&#x27;))
-(&#x27;Product YYWRT&#x27;, Decimal(&#x27;0.077273&#x27;))
-(&#x27;Product KSBRM&#x27;, Decimal(&#x27;0.075000&#x27;))
-(&#x27;Product EPEIM&#x27;, Decimal(&#x27;0.075000&#x27;))
-(&#x27;Product AQOKR&#x27;, Decimal(&#x27;0.075000&#x27;))
-(&#x27;Product COAXA&#x27;, Decimal(&#x27;0.074194&#x27;))
-(&#x27;Product EZZPR&#x27;, Decimal(&#x27;0.073810&#x27;))
-(&#x27;Product NUNAW&#x27;, Decimal(&#x27;0.073333&#x27;))
-(&#x27;Product QAQRL&#x27;, Decimal(&#x27;0.072222&#x27;))
-(&#x27;Product XYZPE&#x27;, Decimal(&#x27;0.070833&#x27;))
-(&#x27;Product PWCJB&#x27;, Decimal(&#x27;0.067273&#x27;))
-(&#x27;Product PAFRH&#x27;, Decimal(&#x27;0.066977&#x27;))
-(&#x27;Product LSOFL&#x27;, Decimal(&#x27;0.066667&#x27;))
-(&#x27;Product WVJFP&#x27;, Decimal(&#x27;0.065385&#x27;))
-(&#x27;Product OSFNS&#x27;, Decimal(&#x27;0.064286&#x27;))
-(&#x27;Product VJXYN&#x27;, Decimal(&#x27;0.064063&#x27;))
-(&#x27;Product WHBYK&#x27;, Decimal(&#x27;0.063922&#x27;))
-(&#x27;Product CBRRL&#x27;, Decimal(&#x27;0.063704&#x27;))
-(&#x27;Product TOONT&#x27;, Decimal(&#x27;0.062821&#x27;))
-(&#x27;Product XWOXC&#x27;, Decimal(&#x27;0.062745&#x27;))
-(&#x27;Product BLCAX&#x27;, Decimal(&#x27;0.062162&#x27;))
-(&#x27;Product VKCMF&#x27;, Decimal(&#x27;0.062000&#x27;))
-(&#x27;Product VJIEO&#x27;, Decimal(&#x27;0.060417&#x27;))
-(&#x27;Product XLXQF&#x27;, Decimal(&#x27;0.060000&#x27;))
-(&#x27;Product TBTBL&#x27;, Decimal(&#x27;0.058824&#x27;))
-(&#x27;Product QOGNU&#x27;, Decimal(&#x27;0.056863&#x27;))
-(&#x27;Product QMVUN&#x27;, Decimal(&#x27;0.056579&#x27;))
-(&#x27;Product VJZZH&#x27;, Decimal(&#x27;0.056410&#x27;))
-(&#x27;Product XKXDO&#x27;, Decimal(&#x27;0.055405&#x27;))
-(&#x27;Product RJVNM&#x27;, Decimal(&#x27;0.055000&#x27;))
-(&#x27;Product WUXYK&#x27;, Decimal(&#x27;0.054167&#x27;))
-(&#x27;Product JYGFE&#x27;, Decimal(&#x27;0.052564&#x27;))
-(&#x27;Product BWRLG&#x27;, Decimal(&#x27;0.052174&#x27;))
-(&#x27;Product HLGZA&#x27;, Decimal(&#x27;0.051563&#x27;))
-(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;0.051316&#x27;))
-(&#x27;Product APITJ&#x27;, Decimal(&#x27;0.051282&#x27;))
-(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;0.051220&#x27;))
-(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;0.050000&#x27;))
-(&#x27;Product SWNJY&#x27;, Decimal(&#x27;0.050000&#x27;))
-(&#x27;Product EVFFA&#x27;, Decimal(&#x27;0.050000&#x27;))
-(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;0.050000&#x27;))
-(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;0.048438&#x27;))
-(&#x27;Product UKXRI&#x27;, Decimal(&#x27;0.047222&#x27;))
-(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;0.047222&#x27;))
-(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;0.047143&#x27;))
-(&#x27;Product QHFFP&#x27;, Decimal(&#x27;0.046250&#x27;))
-(&#x27;Product QDOMO&#x27;, Decimal(&#x27;0.045833&#x27;))
-(&#x27;Product YHXGE&#x27;, Decimal(&#x27;0.043939&#x27;))
-(&#x27;Product ASTMN&#x27;, Decimal(&#x27;0.043750&#x27;))
-(&#x27;Product MYMOI&#x27;, Decimal(&#x27;0.042857&#x27;))
-(&#x27;Product POXFU&#x27;, Decimal(&#x27;0.042500&#x27;))
-(&#x27;Product QSRXF&#x27;, Decimal(&#x27;0.041379&#x27;))
-(&#x27;Product ICKNK&#x27;, Decimal(&#x27;0.041176&#x27;))
-(&#x27;Product HCQDE&#x27;, Decimal(&#x27;0.041000&#x27;))
-(&#x27;Product TTEEX&#x27;, Decimal(&#x27;0.040426&#x27;))
-(&#x27;Product BKGEA&#x27;, Decimal(&#x27;0.038333&#x27;))
-(&#x27;Product OFBNT&#x27;, Decimal(&#x27;0.037879&#x27;))
-(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;0.037500&#x27;))
-(&#x27;Product LQMGN&#x27;, Decimal(&#x27;0.031250&#x27;))
-(&#x27;Product FPYPN&#x27;, Decimal(&#x27;0.030952&#x27;))
-(&#x27;Product VAIIV&#x27;, Decimal(&#x27;0.030833&#x27;))
-(&#x27;Product OVLQI&#x27;, Decimal(&#x27;0.028261&#x27;))
-(&#x27;Product SMIOH&#x27;, Decimal(&#x27;0.027778&#x27;))
-(&#x27;Product HMLNI&#x27;, Decimal(&#x27;0.027586&#x27;))
-(&#x27;Product BIUDV&#x27;, Decimal(&#x27;0.025000&#x27;))
-(&#x27;Product GEEOO&#x27;, Decimal(&#x27;0.023684&#x27;))
-(&#x27;Product CPHFY&#x27;, Decimal(&#x27;0.021429&#x27;))
-(&#x27;Product KSZOI&#x27;, Decimal(&#x27;0.016667&#x27;))
-(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;0.016667&#x27;))
-Size: 77
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_total_orders_price_in_order_detail_by_each_product</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, SUM(OrderDetail.unitPrice * OrderDetail.quantity) AS totalPrice FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalPrice DESC, productName DESC;
-(&#x27;productName&#x27;, &#x27;totalPrice&#x27;)
-(&#x27;Product QDOMO&#x27;, Decimal(&#x27;149984.20&#x27;))
-(&#x27;Product VJXYN&#x27;, Decimal(&#x27;87736.40&#x27;))
-(&#x27;Product UKXRI&#x27;, Decimal(&#x27;76296.00&#x27;))
-(&#x27;Product WHBYK&#x27;, Decimal(&#x27;50286.00&#x27;))
-(&#x27;Product WUXYK&#x27;, Decimal(&#x27;49827.90&#x27;))
-(&#x27;Product VKCMF&#x27;, Decimal(&#x27;45121.20&#x27;))
-(&#x27;Product APITJ&#x27;, Decimal(&#x27;44742.60&#x27;))
-(&#x27;Product BLCAX&#x27;, Decimal(&#x27;35482.20&#x27;))
-(&#x27;Product CKEDC&#x27;, Decimal(&#x27;31987.50&#x27;))
-(&#x27;Product OFBNT&#x27;, Decimal(&#x27;26865.60&#x27;))
-(&#x27;Product GEEOO&#x27;, Decimal(&#x27;25738.80&#x27;))
-(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;25079.20&#x27;))
-(&#x27;Product COAXA&#x27;, Decimal(&#x27;24307.20&#x27;))
-(&#x27;Product QHFFP&#x27;, Decimal(&#x27;23635.80&#x27;))
-(&#x27;Product HCQDE&#x27;, Decimal(&#x27;23009.00&#x27;))
-(&#x27;Product HMLNI&#x27;, Decimal(&#x27;22464.00&#x27;))
-(&#x27;Product YHXGE&#x27;, Decimal(&#x27;22140.20&#x27;))
-(&#x27;Product HLGZA&#x27;, Decimal(&#x27;21534.90&#x27;))
-(&#x27;Product BKGEA&#x27;, Decimal(&#x27;21510.20&#x27;))
-(&#x27;Product MYMOI&#x27;, Decimal(&#x27;20876.50&#x27;))
-(&#x27;Product YYWRT&#x27;, Decimal(&#x27;19512.00&#x27;))
-(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;19048.30&#x27;))
-(&#x27;Product PAFRH&#x27;, Decimal(&#x27;18748.05&#x27;))
-(&#x27;Product RECZE&#x27;, Decimal(&#x27;18559.20&#x27;))
-(&#x27;Product ICKNK&#x27;, Decimal(&#x27;17696.30&#x27;))
-(&#x27;Product JYGFE&#x27;, Decimal(&#x27;16794.00&#x27;))
-(&#x27;Product XYZPE&#x27;, Decimal(&#x27;16438.80&#x27;))
-(&#x27;Product XWOXC&#x27;, Decimal(&#x27;16172.50&#x27;))
-(&#x27;Product SMIOH&#x27;, Decimal(&#x27;15231.50&#x27;))
-(&#x27;Product LYERX&#x27;, Decimal(&#x27;14775.54&#x27;))
-(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;14607.00&#x27;))
-(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;14542.60&#x27;))
-(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;14536.80&#x27;))
-(&#x27;Product HHYDP&#x27;, Decimal(&#x27;14277.60&#x27;))
-(&#x27;Product QMVUN&#x27;, Decimal(&#x27;13902.00&#x27;))
-(&#x27;Product WVJFP&#x27;, Decimal(&#x27;13760.00&#x27;))
-(&#x27;Product LSOFL&#x27;, Decimal(&#x27;13150.80&#x27;))
-(&#x27;Product OSFNS&#x27;, Decimal(&#x27;12866.80&#x27;))
-(&#x27;Product TOONT&#x27;, Decimal(&#x27;11472.00&#x27;))
-(&#x27;Product VJIEO&#x27;, Decimal(&#x27;10524.20&#x27;))
-(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;9685.00&#x27;))
-(&#x27;Product VJZZH&#x27;, Decimal(&#x27;9636.00&#x27;))
-(&#x27;Product FPYPN&#x27;, Decimal(&#x27;9500.00&#x27;))
-(&#x27;Product KSBRM&#x27;, Decimal(&#x27;9424.80&#x27;))
-(&#x27;Product TBTBL&#x27;, Decimal(&#x27;9362.50&#x27;))
-(&#x27;Product RJVNM&#x27;, Decimal(&#x27;9332.40&#x27;))
-(&#x27;Product NUNAW&#x27;, Decimal(&#x27;9171.20&#x27;))
-(&#x27;Product TTEEX&#x27;, Decimal(&#x27;9098.10&#x27;))
-(&#x27;Product AOZBW&#x27;, Decimal(&#x27;8827.00&#x27;))
-(&#x27;Product BWRLG&#x27;, Decimal(&#x27;8650.55&#x27;))
-(&#x27;Product PWCJB&#x27;, Decimal(&#x27;8630.40&#x27;))
-(&#x27;Product OVLQI&#x27;, Decimal(&#x27;7807.80&#x27;))
-(&#x27;Product VAIIV&#x27;, Decimal(&#x27;7345.00&#x27;))
-(&#x27;Product CPHFY&#x27;, Decimal(&#x27;7232.40&#x27;))
-(&#x27;Product SWNJY&#x27;, Decimal(&#x27;6678.00&#x27;))
-(&#x27;Product ACRVI&#x27;, Decimal(&#x27;6664.75&#x27;))
-(&#x27;Product XKXDO&#x27;, Decimal(&#x27;6159.50&#x27;))
-(&#x27;Product CBRRL&#x27;, Decimal(&#x27;6144.00&#x27;))
-(&#x27;Product EPEIM&#x27;, Decimal(&#x27;5801.15&#x27;))
-(&#x27;Product POXFU&#x27;, Decimal(&#x27;5234.40&#x27;))
-(&#x27;Product QAQRL&#x27;, Decimal(&#x27;5121.00&#x27;))
-(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;4840.20&#x27;))
-(&#x27;Product QOGNU&#x27;, Decimal(&#x27;4782.60&#x27;))
-(&#x27;Product AQOKR&#x27;, Decimal(&#x27;4740.50&#x27;))
-(&#x27;Product EZZPR&#x27;, Decimal(&#x27;4358.60&#x27;))
-(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;4200.00&#x27;))
-(&#x27;Product LYLNI&#x27;, Decimal(&#x27;4051.60&#x27;))
-(&#x27;Product LQMGN&#x27;, Decimal(&#x27;3519.00&#x27;))
-(&#x27;Product BIUDV&#x27;, Decimal(&#x27;3510.00&#x27;))
-(&#x27;Product QSRXF&#x27;, Decimal(&#x27;3383.80&#x27;))
-(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;3080.00&#x27;))
-(&#x27;Product EVFFA&#x27;, Decimal(&#x27;3047.20&#x27;))
-(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;2566.00&#x27;))
-(&#x27;Product XLXQF&#x27;, Decimal(&#x27;2562.00&#x27;))
-(&#x27;Product KSZOI&#x27;, Decimal(&#x27;1813.50&#x27;))
-(&#x27;Product ASTMN&#x27;, Decimal(&#x27;1713.50&#x27;))
-(&#x27;Product MYNXN&#x27;, Decimal(&#x27;1542.75&#x27;))
-Size: 77
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_sum_of_quantity_by_each_product</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT productName, SUM(OrderDetail.quantity) AS totalQuantity FROM OrderDetail JOIN Product Product USING (productId) GROUP BY productName ORDER BY totalQuantity DESC, productName DESC;
-(&#x27;productName&#x27;, &#x27;totalQuantity&#x27;)
-(&#x27;Product WHBYK&#x27;, Decimal(&#x27;1577&#x27;))
-(&#x27;Product UKXRI&#x27;, Decimal(&#x27;1496&#x27;))
-(&#x27;Product XWOXC&#x27;, Decimal(&#x27;1397&#x27;))
-(&#x27;Product VKCMF&#x27;, Decimal(&#x27;1263&#x27;))
-(&#x27;Product PAFRH&#x27;, Decimal(&#x27;1158&#x27;))
-(&#x27;Product BWRLG&#x27;, Decimal(&#x27;1155&#x27;))
-(&#x27;Product QOGNU&#x27;, Decimal(&#x27;1125&#x27;))
-(&#x27;Product YZIXQ&#x27;, Decimal(&#x27;1103&#x27;))
-(&#x27;Product WUXYK&#x27;, Decimal(&#x27;1083&#x27;))
-(&#x27;Product RECZE&#x27;, Decimal(&#x27;1057&#x27;))
-(&#x27;Product MYMOI&#x27;, Decimal(&#x27;1057&#x27;))
-(&#x27;Product VJZZH&#x27;, Decimal(&#x27;1016&#x27;))
-(&#x27;Product TTEEX&#x27;, Decimal(&#x27;981&#x27;))
-(&#x27;Product JYGFE&#x27;, Decimal(&#x27;981&#x27;))
-(&#x27;Product BLCAX&#x27;, Decimal(&#x27;978&#x27;))
-(&#x27;Product YYWRT&#x27;, Decimal(&#x27;903&#x27;))
-(&#x27;Product POXFU&#x27;, Decimal(&#x27;891&#x27;))
-(&#x27;Product APITJ&#x27;, Decimal(&#x27;886&#x27;))
-(&#x27;Product NEVTJ&#x27;, Decimal(&#x27;883&#x27;))
-(&#x27;Product HHYDP&#x27;, Decimal(&#x27;828&#x27;))
-(&#x27;Product TOONT&#x27;, Decimal(&#x27;817&#x27;))
-(&#x27;Product GEEOO&#x27;, Decimal(&#x27;806&#x27;))
-(&#x27;Product GMKIJ&#x27;, Decimal(&#x27;805&#x27;))
-(&#x27;Product TBTBL&#x27;, Decimal(&#x27;799&#x27;))
-(&#x27;Product LSOFL&#x27;, Decimal(&#x27;793&#x27;))
-(&#x27;Product LUNZZ&#x27;, Decimal(&#x27;791&#x27;))
-(&#x27;Product HMLNI&#x27;, Decimal(&#x27;763&#x27;))
-(&#x27;Product QAQRL&#x27;, Decimal(&#x27;755&#x27;))
-(&#x27;Product ASTMN&#x27;, Decimal(&#x27;755&#x27;))
-(&#x27;Product HLGZA&#x27;, Decimal(&#x27;753&#x27;))
-(&#x27;Product VJXYN&#x27;, Decimal(&#x27;746&#x27;))
-(&#x27;Product XYWBZ&#x27;, Decimal(&#x27;745&#x27;))
-(&#x27;Product YHXGE&#x27;, Decimal(&#x27;742&#x27;))
-(&#x27;Product HCQDE&#x27;, Decimal(&#x27;740&#x27;))
-(&#x27;Product XKXDO&#x27;, Decimal(&#x27;723&#x27;))
-(&#x27;Product BKGEA&#x27;, Decimal(&#x27;722&#x27;))
-(&#x27;Product COAXA&#x27;, Decimal(&#x27;714&#x27;))
-(&#x27;Product QMVUN&#x27;, Decimal(&#x27;706&#x27;))
-(&#x27;Product RJVNM&#x27;, Decimal(&#x27;697&#x27;))
-(&#x27;Product OFBNT&#x27;, Decimal(&#x27;640&#x27;))
-(&#x27;Product QDOMO&#x27;, Decimal(&#x27;623&#x27;))
-(&#x27;Product LYERX&#x27;, Decimal(&#x27;612&#x27;))
-(&#x27;Product XYZPE&#x27;, Decimal(&#x27;603&#x27;))
-(&#x27;Product VJIEO&#x27;, Decimal(&#x27;601&#x27;))
-(&#x27;Product ZZZHR&#x27;, Decimal(&#x27;580&#x27;))
-(&#x27;Product JLUDZ&#x27;, Decimal(&#x27;580&#x27;))
-(&#x27;Product CBRRL&#x27;, Decimal(&#x27;548&#x27;))
-(&#x27;Product CKEDC&#x27;, Decimal(&#x27;539&#x27;))
-(&#x27;Product ACRVI&#x27;, Decimal(&#x27;534&#x27;))
-(&#x27;Product FPYPN&#x27;, Decimal(&#x27;520&#x27;))
-(&#x27;Product AQOKR&#x27;, Decimal(&#x27;508&#x27;))
-(&#x27;Product SWNJY&#x27;, Decimal(&#x27;506&#x27;))
-(&#x27;Product QSRXF&#x27;, Decimal(&#x27;500&#x27;))
-(&#x27;Product EZZPR&#x27;, Decimal(&#x27;485&#x27;))
-(&#x27;Product KSBRM&#x27;, Decimal(&#x27;453&#x27;))
-(&#x27;Product ICKNK&#x27;, Decimal(&#x27;445&#x27;))
-(&#x27;Product OVLQI&#x27;, Decimal(&#x27;434&#x27;))
-(&#x27;Product PWCJB&#x27;, Decimal(&#x27;404&#x27;))
-(&#x27;Product WVJFP&#x27;, Decimal(&#x27;372&#x27;))
-(&#x27;Product SMIOH&#x27;, Decimal(&#x27;365&#x27;))
-(&#x27;Product CPHFY&#x27;, Decimal(&#x27;348&#x27;))
-(&#x27;Product OSFNS&#x27;, Decimal(&#x27;344&#x27;))
-(&#x27;Product IMEHJ&#x27;, Decimal(&#x27;328&#x27;))
-(&#x27;Product LYLNI&#x27;, Decimal(&#x27;318&#x27;))
-(&#x27;Product QHFFP&#x27;, Decimal(&#x27;313&#x27;))
-(&#x27;Product VAIIV&#x27;, Decimal(&#x27;301&#x27;))
-(&#x27;Product EPEIM&#x27;, Decimal(&#x27;298&#x27;))
-(&#x27;Product NUNAW&#x27;, Decimal(&#x27;297&#x27;))
-(&#x27;Product BKAZJ&#x27;, Decimal(&#x27;297&#x27;))
-(&#x27;Product WEUJZ&#x27;, Decimal(&#x27;293&#x27;))
-(&#x27;Product LQMGN&#x27;, Decimal(&#x27;239&#x27;))
-(&#x27;Product BIUDV&#x27;, Decimal(&#x27;235&#x27;))
-(&#x27;Product XLXQF&#x27;, Decimal(&#x27;184&#x27;))
-(&#x27;Product MYNXN&#x27;, Decimal(&#x27;138&#x27;))
-(&#x27;Product EVFFA&#x27;, Decimal(&#x27;125&#x27;))
-(&#x27;Product KSZOI&#x27;, Decimal(&#x27;122&#x27;))
-(&#x27;Product AOZBW&#x27;, Decimal(&#x27;95&#x27;))
-Size: 77
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_lowest_product_price</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT MIN(unitPrice) AS lowestPrice FROM Product;
-(&#x27;lowestPrice&#x27;,)
-(Decimal(&#x27;2.50&#x27;),)
-Size: 1
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_highest_product_price</td>
-          <td class="col-duration">0.00</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT MAX(unitPrice) AS highestPrice FROM Product;
-(&#x27;highestPrice&#x27;,)
-(Decimal(&#x27;263.50&#x27;),)
-Size: 1
-<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test/mysql/test_aggregate_data.py::TestAggregateData::test_should_select_order_id_with_max_freight</td>
-          <td class="col-duration">0.01</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-SQL query: SELECT orderId, MAX(freight) FROM SalesOrder GROUP BY orderId;
-(&#x27;orderId&#x27;, &#x27;MAX(freight)&#x27;)
+SQL query: SELECT orderId, MIN(freight) FROM SalesOrder GROUP BY orderId;
+(&#x27;orderId&#x27;, &#x27;MIN(freight)&#x27;)
 (10248, Decimal(&#x27;32.38&#x27;))
 (10249, Decimal(&#x27;11.61&#x27;))
 (10250, Decimal(&#x27;65.83&#x27;))
@@ -3950,7 +3950,7 @@ Size: 305
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_grouping_data.py::TestGroupingData::test_should_count_total_orders_and_price_per_year_per_product_with_rollup</td>
-          <td class="col-duration">0.03</td>
+          <td class="col-duration">0.04</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -4621,7 +4621,7 @@ Size: 9
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employees_who_sell_most_products</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -4643,7 +4643,7 @@ Size: 9
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/mysql/test_subqueries.py::TestSubQueries::test_select_employees_who_sell_most_products_having_more_than_200000</td>
-          <td class="col-duration">0.00</td>
+          <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -4977,7 +4977,7 @@ Size: 305
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test/sql_files/test_sql_file_execution.py::TestSqlFileExecution::test_should_execute_file_wout_error_data_should_match</td>
-          <td class="col-duration">0.01</td>
+          <td class="col-duration">0.02</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
